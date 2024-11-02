@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:hop_client/next_page/next_page.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(const MaterialApp(
+    title: 'HOP',
+    home: MainApp(),
+  ));
 }
 
 class MainApp extends StatelessWidget {
@@ -9,10 +13,21 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Center(
+                child: FilledButton(
+                    onPressed: () async {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const NextPage()));
+                    },
+                    child: const Text('次のページへ')))
+          ],
         ),
       ),
     );

@@ -80,19 +80,24 @@ class QuizArea extends StatelessWidget {
   }
 }
 
-class Choises extends StatelessWidget {
-  const Choises({super.key, required this.prefix, required this.choise});
-
+class ChoisesState extends State<Choises> {
   final String prefix;
   final String choise;
 
+  Color backGroundColor = AppColor.quizBackground;
+
+  ChoisesState({required this.prefix, required this.choise});
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        setState(() {
+          backGroundColor = AppColor.correctAnswerColor;
+        });
+      },
       child: Container(
         decoration: BoxDecoration(
-            color: AppColor.quizBackground,
+            color: backGroundColor,
             borderRadius: BorderRadius.all(Radius.circular(16))),
         child: Row(
           children: [
@@ -112,5 +117,17 @@ class Choises extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class Choises extends StatefulWidget {
+  const Choises({super.key, required this.prefix, required this.choise});
+
+  final String prefix;
+  final String choise;
+
+  @override
+  State<StatefulWidget> createState() {
+    return ChoisesState(prefix: prefix, choise: choise);
   }
 }

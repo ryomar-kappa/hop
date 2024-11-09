@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hop_client/app_color.dart';
+import 'package:hop_client/model/quiz.dart';
 
 enum ChoisePrefix {
   a('A'),
@@ -25,19 +26,6 @@ enum ChoisePrefix {
         throw UnsupportedError('想定していない選択肢');
     }
   }
-}
-
-class Quiz {
-  final String question;
-  final List<String> choises;
-  final int correctAnswer;
-  final String explanation;
-
-  Quiz(
-      {required this.question,
-      required this.choises,
-      required this.correctAnswer,
-      required this.explanation});
 }
 
 class QuizPageView extends StatefulWidget {
@@ -73,7 +61,7 @@ class QuizPage extends State<QuizPageView> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppColor.headerColor,
-        title: Text(
+        title: const Text(
           '問題',
           style: TextStyle(color: AppColor.textColor),
         ),
@@ -93,14 +81,14 @@ class QuizPage extends State<QuizPageView> {
                   visible: isCorrect,
                   child: Column(
                     children: [
-                      Text('正解！'),
+                      const Text('正解！'),
                       Text(quiz.explanation,
-                          style: TextStyle(
+                          style: const TextStyle(
                             color: AppColor.textColor,
                           )),
                       FilledButton(
                           onPressed: () {},
-                          child: Text(
+                          child: const Text(
                             '次の問題',
                             style: TextStyle(color: AppColor.textColor),
                           ))
@@ -151,7 +139,7 @@ class QuizArea extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(
+        const SizedBox(
           height: 16,
         ),
         Text(question),
@@ -196,7 +184,7 @@ class Choises extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 choise,
-                style: TextStyle(color: AppColor.quizText),
+                style: const TextStyle(color: AppColor.quizText),
               ),
             )
           ],

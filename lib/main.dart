@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hop_client/next_page/next_page.dart';
+import 'package:hop_client/screen/quiz_page/quiz_page.dart';
 
 void main() {
   runApp(const MaterialApp(

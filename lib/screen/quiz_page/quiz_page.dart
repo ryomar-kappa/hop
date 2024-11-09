@@ -70,36 +70,39 @@ class QuizPage extends State<QuizPageView> {
         child: Container(
           width: double.infinity,
           color: AppColor.backgroundColor,
-          child: Column(
-            children: [
-              Expanded(
-                child: QuizArea(
-                  question: quiz.question,
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Column(
+              children: [
+                Expanded(
+                  child: QuizArea(
+                    question: quiz.question,
+                  ),
                 ),
-              ),
-              Visibility(
-                  visible: isCorrect,
-                  child: Column(
-                    children: [
-                      const Text('正解！'),
-                      Text(quiz.explanation,
-                          style: const TextStyle(
-                            color: AppColor.textColor,
-                          )),
-                      FilledButton(
-                          onPressed: () {},
-                          child: const Text(
-                            '次の問題',
-                            style: TextStyle(color: AppColor.textColor),
-                          ))
-                    ],
-                  )),
-              ChoisesArea(
-                quiz: quiz,
-                choisesState: choisesState,
-                onAnswer: onAnswer,
-              ),
-            ],
+                Visibility(
+                    visible: isCorrect,
+                    child: Column(
+                      children: [
+                        const Text('正解！'),
+                        Text(quiz.explanation,
+                            style: const TextStyle(
+                              color: AppColor.textColor,
+                            )),
+                        FilledButton(
+                            onPressed: () {},
+                            child: const Text(
+                              '次の問題',
+                              style: TextStyle(color: AppColor.textColor),
+                            ))
+                      ],
+                    )),
+                ChoisesArea(
+                  quiz: quiz,
+                  choisesState: choisesState,
+                  onAnswer: onAnswer,
+                ),
+              ],
+            ),
           ),
         ),
       ),
@@ -122,12 +125,15 @@ class ChoisesArea extends StatelessWidget {
     return Column(
         children: List.generate(
             quiz.choises.length,
-            (index) => Choises(
-                prefix: ChoisePrefix.fromIndex(index).text,
-                choise: quiz.choises[index],
-                state: choisesState[index],
-                onAnswer: onAnswer,
-                number: index)));
+            (index) => Padding(
+                  padding: const EdgeInsets.only(bottom: 8),
+                  child: Choises(
+                      prefix: ChoisePrefix.fromIndex(index).text,
+                      choise: quiz.choises[index],
+                      state: choisesState[index],
+                      onAnswer: onAnswer,
+                      number: index),
+                )));
   }
 }
 
@@ -169,19 +175,26 @@ class Choises extends StatelessWidget {
         onAnswer(number);
       },
       child: Container(
+        height: 64,
         decoration: BoxDecoration(
             color:
                 state ? AppColor.correctAnswerColor : AppColor.quizBackground,
             borderRadius: const BorderRadius.all(Radius.circular(16))),
         child: Row(
           children: [
-            Container(
-              decoration:
-                  BoxDecoration(borderRadius: BorderRadius.circular(16)),
-              child: Text(prefix),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Container(
+                width: 32,
+                height: 32,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(16),
+                    color: Colors.white),
+                child: Center(child: Text(prefix)),
+              ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.symmetric(vertical: 8),
               child: Text(
                 choise,
                 style: const TextStyle(color: AppColor.quizText),

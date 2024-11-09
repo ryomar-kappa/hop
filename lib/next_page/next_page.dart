@@ -1,8 +1,72 @@
 import 'package:flutter/material.dart';
 import 'package:hop_client/app_color.dart';
 
-class NextPage extends StatelessWidget {
-  const NextPage({super.key});
+enum ChoisePrefix {
+  a('A'),
+  b('B'),
+  c('C'),
+  d('D');
+
+  final String text;
+
+  const ChoisePrefix(this.text);
+
+  factory ChoisePrefix.fromIndex(int index) {
+    switch (index) {
+      case 0:
+        return ChoisePrefix.a;
+      case 1:
+        return ChoisePrefix.b;
+      case 2:
+        return ChoisePrefix.c;
+      case 3:
+        return ChoisePrefix.d;
+      case _:
+        throw UnsupportedError('想定していない選択肢');
+    }
+  }
+}
+
+class Quiz {
+  final String question;
+  final List<String> choises;
+  final int correctAnswer;
+  final String explanation;
+
+  Quiz(
+      {required this.question,
+      required this.choises,
+      required this.correctAnswer,
+      required this.explanation});
+}
+
+class QuizPageView extends StatefulWidget {
+  const QuizPageView({super.key});
+
+  @override
+  State<StatefulWidget> createState() => QuizPage();
+}
+
+class QuizPage extends State<QuizPageView> {
+  final quiz = Quiz(
+      question: '1.ビールの原材料のうち「ビールの魂」と呼ばれるものはどれ？ ',
+      choises: ['ホップ', 'モルト', '酵母', '水'],
+      correctAnswer: 0,
+      explanation: '解説');
+  List<bool> choisesState = List.generate(4, (_) => false);
+  bool get isCorrect => choisesState.where((e) => e).isNotEmpty;
+  void onAnswer(int answer) {
+    setState(() {
+      if (answer != quiz.correctAnswer) {
+        choisesState[answer] = false;
+        choisesState = List.of(choisesState);
+      }
+      if (answer == quiz.correctAnswer) {
+        choisesState[answer] = true;
+        choisesState = List.of(choisesState);
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +85,32 @@ class NextPage extends StatelessWidget {
           child: Column(
             children: [
               Expanded(
-                child: QuizArea(),
+                child: QuizArea(
+                  question: quiz.question,
+                ),
               ),
-              ChoisesArea(),
+              Visibility(
+                  visible: isCorrect,
+                  child: Column(
+                    children: [
+                      Text('正解！'),
+                      Text(quiz.explanation,
+                          style: TextStyle(
+                            color: AppColor.textColor,
+                          )),
+                      FilledButton(
+                          onPressed: () {},
+                          child: Text(
+                            '次の問題',
+                            style: TextStyle(color: AppColor.textColor),
+                          ))
+                    ],
+                  )),
+              ChoisesArea(
+                quiz: quiz,
+                choisesState: choisesState,
+                onAnswer: onAnswer,
+              ),
             ],
           ),
         ),
@@ -33,39 +120,32 @@ class NextPage extends StatelessWidget {
 }
 
 class ChoisesArea extends StatelessWidget {
-  const ChoisesArea({
-    super.key,
-  });
+  final Quiz quiz;
+  final List<bool> choisesState;
+  final Function onAnswer;
+  const ChoisesArea(
+      {super.key,
+      required this.choisesState,
+      required this.onAnswer,
+      required this.quiz});
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [
-        Choises(
-          prefix: 'A',
-          choise: 'ホップ',
-        ),
-        Choises(
-          prefix: 'B',
-          choise: 'モルト',
-        ),
-        Choises(
-          prefix: 'C',
-          choise: '酵母',
-        ),
-        Choises(
-          prefix: 'D',
-          choise: '水',
-        ),
-      ],
-    );
+        children: List.generate(
+            quiz.choises.length,
+            (index) => Choises(
+                prefix: ChoisePrefix.fromIndex(index).text,
+                choise: quiz.choises[index],
+                state: choisesState[index],
+                onAnswer: onAnswer,
+                number: index)));
   }
 }
 
 class QuizArea extends StatelessWidget {
-  const QuizArea({
-    super.key,
-  });
+  const QuizArea({super.key, required this.question});
+  final String question;
 
   @override
   Widget build(BuildContext context) {
@@ -74,31 +154,37 @@ class QuizArea extends StatelessWidget {
         SizedBox(
           height: 16,
         ),
-        Text('1.ビールの原材料のうち「ビールの魂」と呼ばれるものはどれ？'),
+        Text(question),
       ],
     );
   }
 }
 
-class ChoisesState extends State<Choises> {
+class Choises extends StatelessWidget {
+  final int number;
   final String prefix;
   final String choise;
+  final bool state;
+  final Function onAnswer;
 
-  Color backGroundColor = AppColor.quizBackground;
-
-  ChoisesState({required this.prefix, required this.choise});
+  const Choises(
+      {super.key,
+      required this.prefix,
+      required this.choise,
+      required this.state,
+      required this.onAnswer,
+      required this.number});
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        setState(() {
-          backGroundColor = AppColor.correctAnswerColor;
-        });
+        onAnswer(number);
       },
       child: Container(
         decoration: BoxDecoration(
-            color: backGroundColor,
-            borderRadius: BorderRadius.all(Radius.circular(16))),
+            color:
+                state ? AppColor.correctAnswerColor : AppColor.quizBackground,
+            borderRadius: const BorderRadius.all(Radius.circular(16))),
         child: Row(
           children: [
             Container(
@@ -117,17 +203,5 @@ class ChoisesState extends State<Choises> {
         ),
       ),
     );
-  }
-}
-
-class Choises extends StatefulWidget {
-  const Choises({super.key, required this.prefix, required this.choise});
-
-  final String prefix;
-  final String choise;
-
-  @override
-  State<StatefulWidget> createState() {
-    return ChoisesState(prefix: prefix, choise: choise);
   }
 }

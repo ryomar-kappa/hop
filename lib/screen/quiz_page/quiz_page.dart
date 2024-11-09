@@ -63,7 +63,8 @@ class QuizPage extends State<QuizPageView> {
         backgroundColor: AppColor.headerColor,
         title: const Text(
           '問題',
-          style: TextStyle(color: AppColor.textColor),
+          style:
+              TextStyle(color: AppColor.textColor, fontWeight: FontWeight.bold),
         ),
       ),
       body: SafeArea(
@@ -148,7 +149,9 @@ class QuizArea extends StatelessWidget {
         const SizedBox(
           height: 16,
         ),
-        Text(question),
+        Text(question,
+            style: const TextStyle(
+                color: AppColor.textColor, fontWeight: FontWeight.bold)),
       ],
     );
   }
@@ -197,7 +200,8 @@ class Choises extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 8),
               child: Text(
                 choise,
-                style: const TextStyle(color: AppColor.quizText),
+                style: const TextStyle(
+                    color: AppColor.quizText, fontWeight: FontWeight.bold),
               ),
             )
           ],

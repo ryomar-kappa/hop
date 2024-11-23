@@ -25,7 +25,7 @@ class MainApp extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => QuizPageView()));
+                              builder: (context) => const QuizLoadingView()));
                     },
                     child: const Text('クイズスタート!!')))
           ],

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hop_client/app_color.dart';
 import 'package:hop_client/model/quiz.dart';
+import 'package:hop_client/repository/quiz_repository.dart';
 import 'package:hop_client/screen/complete_page/complete_page.dart';
 
 const questionCount = 1;
@@ -31,13 +32,49 @@ enum ChoisePrefix {
   }
 }
 
+class QuizLoadingView extends StatefulWidget {
+  const QuizLoadingView({super.key});
+
+  @override
+  State<StatefulWidget> createState() => QuizLoadingState();
+}
+
+class QuizLoadingState extends State<QuizLoadingView> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: AppColor.headerColor,
+        title: const Text(
+          '問題',
+          style:
+              TextStyle(color: AppColor.textColor, fontWeight: FontWeight.bold),
+        ),
+      ),
+      body: SafeArea(
+        child: FutureBuilder<Quiz>(
+          future: QuizRepository().fetch(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
+            } else if (snapshot.connectionState == ConnectionState.done) {
+              final quiz = snapshot.data!;
+              return QuizPageView(quiz: quiz);
+            } else {
+              return Center(child: Text('データがありません'));
+            }
+          },
+        ),
+      ),
+    );
+  }
+}
+
 class QuizPageView extends StatefulWidget {
-  QuizPageView({super.key});
-  final quiz = Quiz(
-      question: '1.ビールの原材料のうち「ビールの魂」と呼ばれるものはどれ？ ',
-      choises: ['ホップ', 'モルト', '酵母', '水'],
-      correctAnswer: 0,
-      explanation: '解説');
+  const QuizPageView({super.key, required this.quiz});
+  final Quiz quiz;
 
   @override
   State<StatefulWidget> createState() => QuizPage();
@@ -67,52 +104,42 @@ class QuizPage extends State<QuizPageView> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppColor.headerColor,
-        title: const Text(
-          '問題',
-          style:
-              TextStyle(color: AppColor.textColor, fontWeight: FontWeight.bold),
-        ),
-      ),
-      body: SafeArea(
-        child: Container(
-          width: double.infinity,
-          color: AppColor.backgroundColor,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Column(
-              children: [
-                Expanded(
-                  child: QuizArea(
-                    question: widget.quiz.question,
-                  ),
+    return SafeArea(
+      child: Container(
+        width: double.infinity,
+        color: AppColor.backgroundColor,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Column(
+            children: [
+              Expanded(
+                child: QuizArea(
+                  question: widget.quiz.question,
                 ),
-                Visibility(
-                    visible: isCorrect,
-                    child: Column(
-                      children: [
-                        const Text('正解！'),
-                        Text(widget.quiz.explanation,
-                            style: const TextStyle(
-                              color: AppColor.textColor,
-                            )),
-                        FilledButton(
-                            onPressed: () {},
-                            child: const Text(
-                              '次の問題',
-                              style: TextStyle(color: AppColor.textColor),
-                            ))
-                      ],
-                    )),
-                ChoisesArea(
-                  quiz: widget.quiz,
-                  choisesState: choisesState,
-                  onAnswer: onAnswer,
-                ),
-              ],
-            ),
+              ),
+              Visibility(
+                  visible: isCorrect,
+                  child: Column(
+                    children: [
+                      const Text('正解！'),
+                      Text(widget.quiz.explanation,
+                          style: const TextStyle(
+                            color: AppColor.textColor,
+                          )),
+                      FilledButton(
+                          onPressed: () {},
+                          child: const Text(
+                            '次の問題',
+                            style: TextStyle(color: AppColor.textColor),
+                          ))
+                    ],
+                  )),
+              ChoisesArea(
+                quiz: widget.quiz,
+                choisesState: choisesState,
+                onAnswer: onAnswer,
+              ),
+            ],
           ),
         ),
       ),

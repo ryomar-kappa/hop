@@ -52,7 +52,7 @@ class QuizLoadingState extends State<QuizLoadingView> {
         ),
       ),
       body: SafeArea(
-        child: FutureBuilder<Quiz>(
+        child: FutureBuilder<List<Quiz>>(
           future: QuizRepository().fetch(),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
@@ -61,7 +61,7 @@ class QuizLoadingState extends State<QuizLoadingView> {
               );
             } else if (snapshot.connectionState == ConnectionState.done) {
               final quiz = snapshot.data!;
-              return QuizPageView(quiz: quiz);
+              return QuizPageView(quiz: quiz.first);
             } else {
               return Center(child: Text('データがありません'));
             }

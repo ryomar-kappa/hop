@@ -27,7 +27,7 @@ class MainApp extends StatelessWidget {
                           MaterialPageRoute(
                               builder: (context) => QuizPageView()));
                     },
-                    child: const Text('次のページへ')))
+                    child: const Text('クイズスタート!!')))
           ],
         ),
       ),

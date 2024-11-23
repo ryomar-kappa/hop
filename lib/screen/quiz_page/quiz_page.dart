@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hop_client/app_color.dart';
 import 'package:hop_client/model/quiz.dart';
+import 'package:hop_client/screen/complete_page/complete_page.dart';
+
+const questionCount = 1;
 
 enum ChoisePrefix {
   a('A'),
@@ -29,29 +32,35 @@ enum ChoisePrefix {
 }
 
 class QuizPageView extends StatefulWidget {
-  const QuizPageView({super.key});
+  QuizPageView({super.key});
+  final quiz = Quiz(
+      question: '1.ビールの原材料のうち「ビールの魂」と呼ばれるものはどれ？ ',
+      choises: ['ホップ', 'モルト', '酵母', '水'],
+      correctAnswer: 0,
+      explanation: '解説');
 
   @override
   State<StatefulWidget> createState() => QuizPage();
 }
 
 class QuizPage extends State<QuizPageView> {
-  final quiz = Quiz(
-      question: '1.ビールの原材料のうち「ビールの魂」と呼ばれるものはどれ？ ',
-      choises: ['ホップ', 'モルト', '酵母', '水'],
-      correctAnswer: 0,
-      explanation: '解説');
   List<bool> choisesState = List.generate(4, (_) => false);
   bool get isCorrect => choisesState.where((e) => e).isNotEmpty;
+  int correctCount = 0;
   void onAnswer(int answer) {
     setState(() {
-      if (answer != quiz.correctAnswer) {
+      if (answer != widget.quiz.correctAnswer) {
         choisesState[answer] = false;
         choisesState = List.of(choisesState);
       }
-      if (answer == quiz.correctAnswer) {
+      if (answer == widget.quiz.correctAnswer) {
         choisesState[answer] = true;
         choisesState = List.of(choisesState);
+        correctCount++;
+        if (correctCount == questionCount) {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => CompletePage()));
+        }
       }
     });
   }
@@ -77,7 +86,7 @@ class QuizPage extends State<QuizPageView> {
               children: [
                 Expanded(
                   child: QuizArea(
-                    question: quiz.question,
+                    question: widget.quiz.question,
                   ),
                 ),
                 Visibility(
@@ -85,7 +94,7 @@ class QuizPage extends State<QuizPageView> {
                     child: Column(
                       children: [
                         const Text('正解！'),
-                        Text(quiz.explanation,
+                        Text(widget.quiz.explanation,
                             style: const TextStyle(
                               color: AppColor.textColor,
                             )),
@@ -98,7 +107,7 @@ class QuizPage extends State<QuizPageView> {
                       ],
                     )),
                 ChoisesArea(
-                  quiz: quiz,
+                  quiz: widget.quiz,
                   choisesState: choisesState,
                   onAnswer: onAnswer,
                 ),

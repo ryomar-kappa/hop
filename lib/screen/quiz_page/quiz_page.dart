@@ -4,7 +4,7 @@ import 'package:hop_client/model/quiz.dart';
 import 'package:hop_client/repository/quiz_repository.dart';
 import 'package:hop_client/screen/complete_page/complete_page.dart';
 
-const questionCount = 1;
+const questionCount = 2;
 
 enum ChoisePrefix {
   a('A'),
@@ -61,7 +61,7 @@ class QuizLoadingState extends State<QuizLoadingView> {
               );
             } else if (snapshot.connectionState == ConnectionState.done) {
               final quiz = snapshot.data!;
-              return QuizPageView(quiz: quiz.first);
+              return QuizPageView(quizList: quiz);
             } else {
               return Center(child: Text('データがありません'));
             }
@@ -73,8 +73,8 @@ class QuizLoadingState extends State<QuizLoadingView> {
 }
 
 class QuizPageView extends StatefulWidget {
-  const QuizPageView({super.key, required this.quiz});
-  final Quiz quiz;
+  const QuizPageView({super.key, required this.quizList});
+  final List<Quiz> quizList;
 
   @override
   State<StatefulWidget> createState() => QuizPage();
@@ -86,11 +86,11 @@ class QuizPage extends State<QuizPageView> {
   int correctCount = 0;
   void onAnswer(int answer) {
     setState(() {
-      if (answer != widget.quiz.correctAnswer) {
+      if (answer != widget.quizList[correctCount].correctAnswer) {
         choisesState[answer] = false;
         choisesState = List.of(choisesState);
       }
-      if (answer == widget.quiz.correctAnswer) {
+      if (answer == widget.quizList[correctCount].correctAnswer) {
         choisesState[answer] = true;
         choisesState = List.of(choisesState);
         correctCount++;
@@ -104,6 +104,7 @@ class QuizPage extends State<QuizPageView> {
 
   @override
   Widget build(BuildContext context) {
+    final currentQuiz = widget.quizList[correctCount];
     return SafeArea(
       child: Container(
         width: double.infinity,
@@ -114,7 +115,7 @@ class QuizPage extends State<QuizPageView> {
             children: [
               Expanded(
                 child: QuizArea(
-                  question: widget.quiz.question,
+                  question: currentQuiz.question,
                 ),
               ),
               Visibility(
@@ -122,7 +123,7 @@ class QuizPage extends State<QuizPageView> {
                   child: Column(
                     children: [
                       const Text('正解！'),
-                      Text(widget.quiz.explanation,
+                      Text(currentQuiz.explanation,
                           style: const TextStyle(
                             color: AppColor.textColor,
                           )),
@@ -135,7 +136,7 @@ class QuizPage extends State<QuizPageView> {
                     ],
                   )),
               ChoisesArea(
-                quiz: widget.quiz,
+                quiz: currentQuiz,
                 choisesState: choisesState,
                 onAnswer: onAnswer,
               ),

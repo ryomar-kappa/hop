@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hop_client/main.dart';
 
 class CompletePage extends StatelessWidget {
+  const CompletePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,7 +21,7 @@ class CompletePage extends StatelessWidget {
                       (Route<dynamic> route) => false, // スタック上の他のすべての画面を削除
                     );
                   },
-                  child: Text('ホーム画面に戻る')),
+                  child: const Text('ホーム画面に戻る')),
             )
           ],
         ),

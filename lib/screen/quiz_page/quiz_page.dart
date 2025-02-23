@@ -63,7 +63,7 @@ class QuizLoadingState extends State<QuizLoadingView> {
               final quiz = snapshot.data!;
               return QuizPageView(quizList: quiz);
             } else {
-              return Center(child: Text('データがありません'));
+              return const Center(child: Text('データがありません'));
             }
           },
         ),
@@ -95,8 +95,8 @@ class QuizPage extends State<QuizPageView> {
         choisesState = List.of(choisesState);
         correctCount++;
         if (correctCount == questionCount) {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => CompletePage()));
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const CompletePage()));
         }
       }
     });

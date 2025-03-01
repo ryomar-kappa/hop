@@ -5,15 +5,12 @@
         "--name",
         "hop"
     ],
-    "forwardPorts": [
-        5554,
-        5555,
-        5037
-    ],
+    "forwardPorts": [ 5554, 5555, 5037 ],
     "customizations": {
         "vscode": {
             "extensions": [
-                "dart-code.flutter"
+                "dart-code.flutter",
+                "esbenp.prettier-vscode"
             ]
         }
     }

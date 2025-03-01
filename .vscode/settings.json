@@ -5,5 +5,9 @@
             "source.fixAll": "always",
         },
     },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "prettier.printWidth": 80
+    }, 
     "editor.formatOnSave": true
 }

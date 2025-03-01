@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hop_client/model/enum.dart';
 import 'package:hop_client/screen/quiz_page/quiz_page.dart';
 
 void main() {
@@ -25,7 +26,9 @@ class MainApp extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const QuizLoadingView()));
+                              // FIXME: 画面にモード選択が追加されたら修正.
+                              builder: (context) => const QuizLoadingView(
+                                  mode: QuizMode.thirty)));
                     },
                     child: const Text('クイズスタート!!')))
           ],

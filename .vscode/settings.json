@@ -3,6 +3,7 @@
         "editor.defaultFormatter": "Dart-Code.dart-code",
         "editor.codeActionsOnSave": {
             "source.fixAll": "always",
+            "source.organizeImports": "always",
         },
     },
     "[json]": {

@@ -1,24 +1,446 @@
 [
   {
-    "question": "1.ビールの原材料のうち「ビールの魂」と呼ばれるものはどれ？",
+    "id": 1,
+    "level": 3,
+    "question": "お酒の製造方法による分類で、ビールはどれに該当するか。\n次の選択肢より選んでください。",
     "choices": [
-      "ホップ",
-      "モルト",
-      "酵母",
-      "水"
+      { "value": "醸造酒", "answer": true },
+      { "value": "蒸留酒", "answer": false },
+      { "value": "混成酒", "answer": false },
+      { "value": "紹興酒", "answer": false }
     ],
-    "correctAnswer": 0,
-    "explanation": "解説"
+    "explanation": "TODO"
   },
   {
-    "question": "2.ビールの発酵に最も重要なものはどれ？",
+    "id": 2,
+    "level": 3,
+    "question": "モルト（Malt）の日本語訳として最も適切なものを、次の選択肢より選んでください。",
     "choices": [
-      "ホップ",
-      "モルト",
-      "酵母",
-      "水"
+      { "value": "大麦", "answer": false },
+      { "value": "醸造", "answer": false },
+      { "value": "発酵", "answer": false },
+      { "value": "麦芽", "answer": true }
     ],
-    "correctAnswer": 2,
-    "explanation": "解説"
+    "explanation": "TODO"
+  },
+  {
+    "id": 3,
+    "level": 2,
+    "question": "大麦の醸造で、酵素が最も多く生成される部分はどこか。\n適切なものを、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "穀皮（こくひ）", "answer": false },
+      { "value": "胚（はい）", "answer": false },
+      { "value": "胚乳（はいにゅう）", "answer": false },
+      { "value": "糊粉層（こふんそう）", "answer": true }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 4,
+    "level": 2,
+    "question": "大麦の栽培に関して、誤っているものを次の選択肢より選んでください。",
+    "choices": [
+      {
+        "value": "用途や生産地に合わせて、品種改良が進んでいる。",
+        "answer": false
+      },
+      {
+        "value": "一般的には穂が出てから40~50日後に収穫適期となる。",
+        "answer": false
+      },
+      { "value": "穂の色が緑色のうちに収穫する。", "answer": true },
+      {
+        "value": "麦踏は、大麦が強く元気に育つための作業である",
+        "answer": false
+      }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 5,
+    "level": 3,
+    "question": "水の硬度などを調整し、ビールの醸造用水にすることを何というか。次の選択肢より選んでください。",
+    "choices": [
+      { "value": "水を磨く", "answer": true },
+      { "value": "水を絞る", "answer": false },
+      { "value": "水を叩く", "answer": false },
+      { "value": "水を落とす", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 6,
+    "level": 2,
+    "question": "ビール産地のうち、ミュンヘン（ドイツ）より硬水の産地を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "ドルトムント（ドイツ）", "answer": true },
+      { "value": "札幌（日本）", "answer": false },
+      { "value": "ピルゼン（チェコ）", "answer": false },
+      { "value": "ミルウォーキー（アメリカ）", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 7,
+    "level": 3,
+    "question": "日本の酒税法でビールの着色料として使用が認められているものを、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "食用黄色5号", "answer": false },
+      { "value": "ウコン色素", "answer": false },
+      { "value": "カラメル", "answer": true },
+      { "value": "クチナシ色素", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 8,
+    "level": 3,
+    "question": "2018年の酒税法改正後に追加されたビールの副原料に該当するものを、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "果実", "answer": true },
+      { "value": "とうもろこし", "answer": false },
+      { "value": "こうりゃん", "answer": false },
+      { "value": "米", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 9,
+    "level": 3,
+    "question": "上面発酵酵母と下面発酵酵母の一般的な特徴として、誤っているものを次の選択肢より選んでください。",
+    "choices": [
+      {
+        "value": "エールは上面発酵酵母を使用し、ラガーは下面発酵酵母を使用する",
+        "answer": false
+      },
+      {
+        "value": "上面発酵酵母は凝集性酵母で、下面発酵酵母は浮遊性酵母である",
+        "answer": true
+      },
+      {
+        "value": "発酵温度は、上面発酵酵母より下面発酵酵母の方が低い",
+        "answer": false
+      },
+      {
+        "value": "発酵期間、貯酒期間は下面発酵より上面発酵の方が短い",
+        "answer": false
+      }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 10,
+    "level": 3,
+    "question": "ビールの製造工程を正しい順に並べたものを、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "仕込 => 製麦 => 発酵・貯酒 => ろ過", "answer": false },
+      { "value": "仕込 => ろ過 => 製麦 => 発酵・貯酒", "answer": false },
+      { "value": "製麦 => 仕込 => 発酵・貯酒 => ろ過", "answer": true },
+      { "value": "製麦 => ろ過 => 仕込 => 発酵・貯酒", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 11,
+    "level": 2,
+    "question": "製麦の目的について、最も適切なものを次の選択肢より選んでください。",
+    "choices": [
+      { "value": "苦味の成分を生成させる", "answer": false },
+      { "value": "清澄で濁りの無い麦汁をつくる", "answer": false },
+      { "value": "大麦の成分を酵素で分解されやすい状態にする", "answer": true },
+      { "value": "大麦種子中の酵素の働きを止める", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 12,
+    "level": 2,
+    "question": "淡色麦芽の製麦工程ではいくつかの工程を経て麦芽が製造される。その工程を正しい順に並べたものを次の選択肢より選んでください。",
+    "choices": [
+      { "value": "浸麦 => 発芽 => 焙燥 => 除根", "answer": true },
+      { "value": "浸麦 => 発芽 => 除根 => 焙燥", "answer": false },
+      { "value": "浸麦 => 除根 => 発芽 => 焙燥", "answer": false },
+      { "value": "浸麦 => 焙燥 => 発芽 => 除根", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 13,
+    "level": 3,
+    "question": "濃色麦芽についての説明で、正しいものを次の選択肢より選んでください。",
+    "choices": [
+      {
+        "value": "ロースターを用いて焙煎したものを濃色麦芽という",
+        "answer": true
+      },
+      {
+        "value": "濃色麦芽の一種のチョコレート麦芽はカカオで色付けしたものである",
+        "answer": false
+      },
+      { "value": "濃色ビールは濃色麦芽だけでつくられる", "answer": false },
+      {
+        "value": "クリスタル麦芽は濃色麦芽ではなく淡色麦芽に分類される",
+        "answer": false
+      }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 14,
+    "level": 2,
+    "question": "下記の3つの麦芽を、色の濃い順に並べたものを、次の選択肢より選んでください。\nA: ウィーン麦芽\nB: クリスタル麦芽\nC: チョコレート麦芽",
+    "choices": [
+      { "value": "A => B => C", "answer": false },
+      { "value": "B => C => A", "answer": false },
+      { "value": "C => A => B", "answer": false },
+      { "value": "C => B => A", "answer": true }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 15,
+    "level": 3,
+    "question": "ビールの仕込工程において、粉砕された麦芽と温水を混ぜ合わせてつくられるおかゆ状のものを何というか、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "ブルッフ", "answer": false },
+      { "value": "マイシェ", "answer": true },
+      { "value": "ロイター", "answer": false },
+      { "value": "スパージング", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 16,
+    "level": 3,
+    "question": "仕込槽を加熱してマイシェの温度を段階的に上げていくビールの仕込方法の名称を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "デコクション法", "answer": false },
+      { "value": "インフュージョン法", "answer": true },
+      { "value": "酵母純粋培養法", "answer": false },
+      { "value": "低温殺菌法", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 17,
+    "level": 3,
+    "question": "ビールの仕込工程で行なわれる麦汁煮沸では、タンパク質を主とした凝固物が生成される。この凝固物の呼び名を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "ブレット", "answer": false },
+      { "value": "マイシェ", "answer": false },
+      { "value": "ブルッフ", "answer": true },
+      { "value": "オールソップ", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 18,
+    "level": 2,
+    "question": "ビールの発酵工程において、ビール酵母が取り込むことのできない物質を次の選択肢より選んでください。",
+    "choices": [
+      { "value": "麦芽糖", "answer": false },
+      { "value": "ブドウ糖", "answer": false },
+      { "value": "アミロペクチン", "answer": true },
+      { "value": "果糖", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 19,
+    "level": 2,
+    "question": "ビールの仕込工程の順番で正しいものを次の選択肢より選んでください。",
+    "choices": [
+      { "value": "麦芽粉砕 => 糖化 => 麦汁ろ過 => 麦汁煮沸", "answer": true },
+      { "value": "麦汁煮沸 => 麦汁ろ過 => 糖化 => 麦芽粉砕", "answer": false },
+      { "value": "麦芽粉砕 => 麦汁ろ過 => 糖化 => 麦汁煮沸", "answer": false },
+      { "value": "麦汁煮沸 => 麦芽粉砕 => 糖化 => 麦汁ろ過", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 20,
+    "level": 3,
+    "question": "大麦を発芽させることで生成される、麦芽の中のデンプンを糖に分解する酵素の名前を次の選択肢より選んでください。",
+    "choices": [
+      { "value": "アミラーゼ", "answer": true },
+      { "value": "プロテアーゼ", "answer": false },
+      { "value": "マイシェ", "answer": false },
+      { "value": "アルカロイド", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 21,
+    "level": 3,
+    "question": "仕込温度で50°Cを保持する目的として、最も適切なものを次の選択肢より選んでください。",
+    "choices": [
+      { "value": "酵素の失活", "answer": false },
+      { "value": "糖化", "answer": false },
+      { "value": "タンパク休止", "answer": true },
+      { "value": "ろ過", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 22,
+    "level": 3,
+    "question": "ビールの仕込工程において、仕込釜と仕込槽を併用し、マイシェの温度を高める方法を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "インフュージョン法", "answer": false },
+      { "value": "デコクション法", "answer": true },
+      { "value": "酵母純粋培養法", "answer": false },
+      { "value": "低温殺菌法", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 23,
+    "level": 2,
+    "question": "マイシェから固形物を除去するために、目の粗いスリットの入った金属板を敷き、麦の穀皮をろ過材として使うろ過方式の名称を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "フィルタープレス式", "answer": false },
+      { "value": "ロイター式", "answer": true },
+      { "value": "インフュージョン法", "answer": false },
+      { "value": "デコクション法", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 24,
+    "level": 2,
+    "question": "近代設備が導入される以前の醸造技術者が、適正な麦汁の煮沸時間の参考としていたものは何か、最も適切なものを次の選択肢より選んでください。",
+    "choices": [
+      { "value": "煮沸時に出る破裂音", "answer": false },
+      { "value": "同量の水が沸騰するまでの時間", "answer": false },
+      { "value": "ブルッフの形成状態", "answer": true },
+      { "value": "エステル香の変化", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 25,
+    "level": 2,
+    "question": "ホップの香りをより強く付与するため、熱の影響を受けない発酵以降の工程でホップを投入する手法を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "マッシュホッピング", "answer": false },
+      { "value": "ケトルホッピング", "answer": false },
+      { "value": "レイトホッピング", "answer": false },
+      { "value": "ドライホッピング", "answer": true }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 26,
+    "level": 3,
+    "question": "主発酵（前発酵）を終えたビールは何と呼ばれるか、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "第一麦汁", "answer": false },
+      { "value": "若ビール", "answer": true },
+      { "value": "マイシェ", "answer": false },
+      { "value": "ロイター", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 27,
+    "level": 2,
+    "question": "ビールの製造工程における「後発酵」の説明として、誤っているものを次の選択肢より選んでください。",
+    "choices": [
+      {
+        "value": "徐々に加熱しながらビール中に炭酸ガスを溶解させる",
+        "answer": true
+      },
+      { "value": "「熟成・貯酒」と同義である", "answer": false },
+      { "value": "ビールを清澄化させる", "answer": false },
+      { "value": "炭酸ガスにより不快な香りを揮散させる", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 28,
+    "level": 3,
+    "question": "ビールの発酵工程で生成される酵母由来の香気成分である「酢酸インアミル」に関する説明として正しいものを、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "バナナのようなフルーティな香り", "answer": true },
+      { "value": "燻製のような香り", "answer": false },
+      { "value": "バラのような香り", "answer": false },
+      { "value": "日本酒のような吟醸香", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 29,
+    "level": 2,
+    "question": "ビールの熟成・貯酒工程に関する説明として誤っているものを、次の選択肢より選んでください。",
+    "choices": [
+      {
+        "value": "麦芽100%でエキス分の高いビールの場合は、標準的な下面発酵ビールより長い貯酒期間が必要とされる",
+        "answer": false
+      },
+      {
+        "value": "適度な加圧状態で徐々に冷却することでビール中に炭酸ガスを溶解させる",
+        "answer": false
+      },
+      {
+        "value": "上面発酵ビールの場合は、一般的に下面発酵ビールより、貯酒期間は長い",
+        "answer": true
+      },
+      {
+        "value": "貯酒期間はビールのタイプによって様々であり、長ければ長いほど良いというものではない",
+        "answer": false
+      }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 30,
+    "level": 2,
+    "question": "貯酒が終わったビールから、酵母などの固形分を取り除く「ろ過」について、正しく説明しているものを、次の選択肢より選んでください。",
+    "choices": [
+      {
+        "value": "この場合の「ろ過」は「熱処理」と同義である",
+        "answer": false
+      },
+      { "value": "ルイ・パスツールが発明した技術である", "answer": false },
+      { "value": "ビールの品質安定性を高める", "answer": true },
+      { "value": "事前にビールを高温（70°C以上）の状態にする", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 31,
+    "level": 3,
+    "question": "「クロスフローろ過」の説明で、誤っているものを、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "珪藻土を用いるろ過方法である", "answer": true },
+      { "value": "チューブタイプのろ過膜を使用する", "answer": false },
+      { "value": "浄水器などにも使われる技術", "answer": false },
+      { "value": "ろ過性能の高さと目詰まりのしにくさが特徴", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 32,
+    "level": 3,
+    "question": "1965（昭和40）年に、日本で最初に「プラスチック製ビール通い箱」（P箱）を導入した会社を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "アサヒ", "answer": false },
+      { "value": "サッポロ", "answer": false },
+      { "value": "キリン", "answer": true },
+      { "value": "サントリー", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 33,
+    "level": 3,
+    "question": "ビールのびん詰や缶詰は、容器内をある気体に置換して行われる。その気体を次の選択肢より選んでください。",
+    "choices": [
+      { "value": "水素", "answer": false },
+      { "value": "酸素", "answer": false },
+      { "value": "炭酸ガス", "answer": true },
+      { "value": "フロンガス", "answer": false }
+    ],
+    "explanation": "TODO"
   }
 ]

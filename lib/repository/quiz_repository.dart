@@ -11,16 +11,18 @@ class QuizRepository {
 
     final List<dynamic> jsonData = json.decode(jsonString);
 
-    List<Quiz> quizzes = [];
-    for (var item in jsonData) {
-      quizzes.add(Quiz(
+    return jsonData.map((item) {
+      return Quiz(
         question: item['question'],
-        choises: List<String>.from(item['choices']),
-        correctAnswer: item['correctAnswer'],
+        choices: List<Choice>.from(
+          List<Map<String, dynamic>>.from(item['choices'])
+              .map((choice) => Choice(
+                    value: choice['value'],
+                    answer: choice['answer'],
+                  )),
+        ),
         explanation: item['explanation'],
-      ));
-    }
-
-    return quizzes;
+      );
+    }).toList();
   }
 }

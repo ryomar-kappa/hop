@@ -1,39 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:hop_client/app_color.dart';
+import 'package:hop_client/model/enum.dart';
 import 'package:hop_client/model/quiz.dart';
 import 'package:hop_client/repository/quiz_repository.dart';
 import 'package:hop_client/screen/complete_page/complete_page.dart';
 
-const questionCount = 2;
-
-enum ChoisePrefix {
-  a('A'),
-  b('B'),
-  c('C'),
-  d('D');
-
-  final String text;
-
-  const ChoisePrefix(this.text);
-
-  factory ChoisePrefix.fromIndex(int index) {
-    switch (index) {
-      case 0:
-        return ChoisePrefix.a;
-      case 1:
-        return ChoisePrefix.b;
-      case 2:
-        return ChoisePrefix.c;
-      case 3:
-        return ChoisePrefix.d;
-      case _:
-        throw UnsupportedError('想定していない選択肢');
-    }
-  }
-}
-
 class QuizLoadingView extends StatefulWidget {
-  const QuizLoadingView({super.key});
+  final QuizMode mode;
+  const QuizLoadingView({super.key, required this.mode});
 
   @override
   State<StatefulWidget> createState() => QuizLoadingState();
@@ -60,8 +34,18 @@ class QuizLoadingState extends State<QuizLoadingView> {
                 child: CircularProgressIndicator(),
               );
             } else if (snapshot.connectionState == ConnectionState.done) {
-              final quiz = snapshot.data!;
-              return QuizPageView(quizList: quiz);
+              final quizList = snapshot.data!;
+              quizList.shuffle();
+
+              int questionNum = widget.mode.num;
+
+              if (quizList.length > questionNum) {
+                quizList.removeRange(questionNum, quizList.length);
+              }
+              for (var quiz in quizList) {
+                quiz.choices.shuffle();
+              }
+              return QuizPageView(quizList: quizList);
             } else {
               return const Center(child: Text('データがありません'));
             }
@@ -81,30 +65,80 @@ class QuizPageView extends StatefulWidget {
 }
 
 class QuizPage extends State<QuizPageView> {
-  List<bool> choisesState = List.generate(4, (_) => false);
-  bool get isCorrect => choisesState.where((e) => e).isNotEmpty;
-  int correctCount = 0;
-  void onAnswer(int answer) {
+  int currentQuizCount = 1;
+  Choice? selectedChoice;
+
+  void onAnswer() {
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (BuildContext context) {
+        return PopScope(
+          canPop: false,
+          child: AlertDialog(
+            backgroundColor: AppColor.backgroundColor,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(16),
+            ),
+            title: Text(
+              isCorrect() ? '正解' : '不正解',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  color: isCorrect()
+                      ? AppColor.correctAnswerColor
+                      : AppColor.incorrectAnswerColor),
+            ),
+            content: Text(
+              widget.quizList[currentQuizCount - 1].explanation,
+              style: const TextStyle(color: AppColor.textColor),
+            ),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  if (currentQuizCount == widget.quizList.length) {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const CompletePage()));
+                  } else {
+                    Navigator.of(context).pop();
+                    setState(() {
+                      selectedChoice = null;
+                      currentQuizCount++;
+                    });
+                  }
+                },
+                child: Text(
+                  currentQuizCount == widget.quizList.length
+                      ? 'サマリーへ'
+                      : '次の問題へ',
+                  style: const TextStyle(color: AppColor.textColor),
+                ),
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  bool isCorrect() {
+    return selectedChoice!.answer;
+  }
+
+  void selectChoice(Choice choice) {
     setState(() {
-      if (answer != widget.quizList[correctCount].correctAnswer) {
-        choisesState[answer] = false;
-        choisesState = List.of(choisesState);
-      }
-      if (answer == widget.quizList[correctCount].correctAnswer) {
-        choisesState[answer] = true;
-        choisesState = List.of(choisesState);
-        correctCount++;
-        if (correctCount == questionCount) {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (context) => const CompletePage()));
-        }
+      if (selectedChoice == choice) {
+        selectedChoice = null;
+      } else {
+        selectedChoice = choice;
       }
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    final currentQuiz = widget.quizList[correctCount];
+    final currentQuiz = widget.quizList[currentQuizCount - 1];
     return SafeArea(
       child: Container(
         width: double.infinity,
@@ -114,31 +148,49 @@ class QuizPage extends State<QuizPageView> {
           child: Column(
             children: [
               Expanded(
-                child: QuizArea(
-                  question: currentQuiz.question,
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: QuestionArea(
+                      question: '$currentQuizCount: ${currentQuiz.question}'),
                 ),
               ),
-              Visibility(
-                  visible: isCorrect,
-                  child: Column(
-                    children: [
-                      const Text('正解！'),
-                      Text(currentQuiz.explanation,
-                          style: const TextStyle(
-                            color: AppColor.textColor,
-                          )),
-                      FilledButton(
-                          onPressed: () {},
-                          child: const Text(
-                            '次の問題',
-                            style: TextStyle(color: AppColor.textColor),
-                          ))
-                    ],
-                  )),
-              ChoisesArea(
-                quiz: currentQuiz,
-                choisesState: choisesState,
-                onAnswer: onAnswer,
+              Column(
+                children: currentQuiz.choices.map((choice) {
+                  int choiceIndex = currentQuiz.choices.indexOf(choice);
+
+                  return Padding(
+                    padding: const EdgeInsets.only(bottom: 8),
+                    child: ChoiceArea(
+                      prefix: ChoicePrefix.fromIndex(choiceIndex).text,
+                      choice: choice,
+                      isSelected: choice == selectedChoice,
+                      onTap: () => selectChoice(choice),
+                    ),
+                  );
+                }).toList(),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    FilledButton(
+                      onPressed:
+                          selectedChoice == null ? null : () => onAnswer(),
+                      style: ButtonStyle(
+                        backgroundColor: WidgetStateProperty.all(
+                          selectedChoice == null
+                              ? AppColor.disabledButtonColor
+                              : AppColor.mainButtonColor,
+                        ),
+                      ),
+                      child: const Text(
+                        '回答',
+                        style: TextStyle(color: AppColor.buttonTextColor),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
@@ -148,78 +200,51 @@ class QuizPage extends State<QuizPageView> {
   }
 }
 
-class ChoisesArea extends StatelessWidget {
-  final Quiz quiz;
-  final List<bool> choisesState;
-  final Function onAnswer;
-  const ChoisesArea({
-    super.key,
-    required this.choisesState,
-    required this.onAnswer,
-    required this.quiz,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-        children: List.generate(
-            quiz.choises.length,
-            (index) => Padding(
-                  padding: const EdgeInsets.only(bottom: 8),
-                  child: Choises(
-                      prefix: ChoisePrefix.fromIndex(index).text,
-                      choise: quiz.choises[index],
-                      state: choisesState[index],
-                      onAnswer: onAnswer,
-                      number: index),
-                )));
-  }
-}
-
-class QuizArea extends StatelessWidget {
-  const QuizArea({super.key, required this.question});
+class QuestionArea extends StatelessWidget {
+  const QuestionArea({super.key, required this.question});
   final String question;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const SizedBox(
-          height: 16,
+        const SizedBox(height: 16),
+        Text(
+          question,
+          style: const TextStyle(
+            color: AppColor.textColor,
+            fontWeight: FontWeight.bold,
+          ),
         ),
-        Text(question,
-            style: const TextStyle(
-                color: AppColor.textColor, fontWeight: FontWeight.bold)),
       ],
     );
   }
 }
 
-class Choises extends StatelessWidget {
-  final int number;
+class ChoiceArea extends StatelessWidget {
   final String prefix;
-  final String choise;
-  final bool state;
-  final Function onAnswer;
+  final Choice choice;
+  final bool isSelected;
+  final Function onTap;
 
-  const Choises(
-      {super.key,
-      required this.number,
-      required this.prefix,
-      required this.choise,
-      required this.state,
-      required this.onAnswer});
+  const ChoiceArea({
+    super.key,
+    required this.prefix,
+    required this.choice,
+    required this.isSelected,
+    required this.onTap,
+  });
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        onAnswer(number);
-      },
+      onTap: () => onTap(),
+      // FIXME: component 化検討.
       child: Container(
         height: 64,
         decoration: BoxDecoration(
-            color:
-                state ? AppColor.correctAnswerColor : AppColor.quizBackground,
+            color: isSelected
+                ? AppColor.correctAnswerColor
+                : AppColor.quizBackground,
             borderRadius: const BorderRadius.all(Radius.circular(16))),
         child: Row(
           children: [
@@ -229,15 +254,16 @@ class Choises extends StatelessWidget {
                 width: 32,
                 height: 32,
                 decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(16),
-                    color: Colors.white),
+                  borderRadius: BorderRadius.circular(16),
+                  color: Colors.white,
+                ),
                 child: Center(child: Text(prefix)),
               ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 8),
               child: Text(
-                choise,
+                choice.value,
                 style: const TextStyle(
                     color: AppColor.quizText, fontWeight: FontWeight.bold),
               ),

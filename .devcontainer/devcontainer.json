@@ -1,6 +1,20 @@
 {
     "name": "hop",
     "dockerFile": "../Dockerfile",
-    "runArgs": ["--name", "hop"],
-    "forwardPorts": [5554, 5555, 5037]
+    "runArgs": [
+        "--name",
+        "hop"
+    ],
+    "forwardPorts": [
+        5554,
+        5555,
+        5037
+    ],
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dart-code.flutter"
+            ]
+        }
+    }
 }

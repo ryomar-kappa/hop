@@ -152,11 +152,12 @@ class ChoisesArea extends StatelessWidget {
   final Quiz quiz;
   final List<bool> choisesState;
   final Function onAnswer;
-  const ChoisesArea(
-      {super.key,
-      required this.choisesState,
-      required this.onAnswer,
-      required this.quiz});
+  const ChoisesArea({
+    super.key,
+    required this.choisesState,
+    required this.onAnswer,
+    required this.quiz,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -203,11 +204,11 @@ class Choises extends StatelessWidget {
 
   const Choises(
       {super.key,
+      required this.number,
       required this.prefix,
       required this.choise,
       required this.state,
-      required this.onAnswer,
-      required this.number});
+      required this.onAnswer});
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

@@ -151,7 +151,7 @@ class QuizPage extends State<QuizPageView> {
                 child: Align(
                   alignment: Alignment.centerLeft,
                   child: QuestionArea(
-                      question: '$currentQuizCount: ${currentQuiz.question}'),
+                      question: '$currentQuizCount. ${currentQuiz.question}'),
                 ),
               ),
               Column(
@@ -240,7 +240,7 @@ class ChoiceArea extends StatelessWidget {
       onTap: () => onTap(),
       // FIXME: component 化検討.
       child: Container(
-        height: 64,
+        constraints: const BoxConstraints(minHeight: 64),
         decoration: BoxDecoration(
             color: isSelected
                 ? AppColor.correctAnswerColor
@@ -249,7 +249,7 @@ class ChoiceArea extends StatelessWidget {
         child: Row(
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 8),
               child: Container(
                 width: 32,
                 height: 32,
@@ -260,14 +260,15 @@ class ChoiceArea extends StatelessWidget {
                 child: Center(child: Text(prefix)),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8),
+            Flexible(
+                child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
               child: Text(
                 choice.value,
                 style: const TextStyle(
                     color: AppColor.quizText, fontWeight: FontWeight.bold),
               ),
-            )
+            ))
           ],
         ),
       ),

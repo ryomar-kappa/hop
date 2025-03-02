@@ -174,15 +174,14 @@ class QuizPage extends State<QuizPageView> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
+                    // FIXME: ボタン系は役割に応じて共通化.
                     FilledButton(
                       onPressed:
                           selectedChoice == null ? null : () => onAnswer(),
-                      style: ButtonStyle(
-                        backgroundColor: WidgetStateProperty.all(
-                          selectedChoice == null
-                              ? AppColor.disabledButtonColor
-                              : AppColor.mainButtonColor,
-                        ),
+                      style: FilledButton.styleFrom(
+                        backgroundColor: selectedChoice == null
+                            ? AppColor.disabledButtonColor
+                            : AppColor.mainButtonColor,
                       ),
                       child: const Text(
                         '回答',

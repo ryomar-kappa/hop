@@ -442,5 +442,308 @@
       { "value": "フロンガス", "answer": false }
     ],
     "explanation": "TODO"
+  },
+  {
+    "id": 34,
+    "level": 3,
+    "question": "紀元前3000年頃のメソポタミアで、ビール醸造に関する最古の文字記録を残した民族を次の選択肢より選んでください。",
+    "choices": [
+      { "value": "ゲルマン人", "answer": false },
+      { "value": "ユダヤ人", "answer": false },
+      { "value": "エジプト人", "answer": false },
+      { "value": "シュメール人", "answer": true }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 35,
+    "level": 3,
+    "question": "紀元前3000年頃、メソポタミアのシュメール人により、バッピルという麦芽のパンからつくられていたビールは何と呼ばれていたか、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "シカル", "answer": true },
+      { "value": "セリア", "answer": false },
+      { "value": "ルピナス", "answer": false },
+      { "value": "ベウロ", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 36,
+    "level": 3,
+    "question": "ハムラビ法典の条文によれば、当時のビール代は何で支払われていたか、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "麦", "answer": true },
+      { "value": "銀", "answer": false },
+      { "value": "パン", "answer": false },
+      { "value": "豆", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 37,
+    "level": 3,
+    "question": "古代エジプトで「ビールがピラミッドをつくった」といわれる理由は何か。最も適切なものを、次の選択肢より選んでください。",
+    "choices": [
+      {
+        "value": "石を運ぶ丸太の潤滑剤にビールが使われたから",
+        "answer": false
+      },
+      { "value": "ビールの税金が建設資金となったから", "answer": false },
+      { "value": "ビール好きの国王が建設を命じたから", "answer": false },
+      {
+        "value": "労働者の疲労回復飲料としてビールが配給されたから",
+        "answer": true
+      }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 38,
+    "level": 3,
+    "question": "紀元前6世紀頃からの古代ゲルマン人によるビールづくりに関して、誤っているものを次の選択肢より選んでください。",
+    "choices": [
+      {
+        "value": "ビールブレッドを経由しないビールづくりを行っていた",
+        "answer": false
+      },
+      {
+        "value": "男たちは野牛の角でできた杯でビールを回し飲みしていた",
+        "answer": false
+      },
+      {
+        "value": "ビールづくりに関しては、主に男性が担当していた",
+        "answer": true
+      },
+      {
+        "value": "ローマの歴史家タキトゥスが執筆した『ゲルマニア』にはビール関する記述がある",
+        "answer": false
+      }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 39,
+    "level": 3,
+    "question": "ドイツ・ミュンヘン郊外の修道院に1040年に創立された、現存する世界最古のビール醸造所の名前を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "ヴァイエンシュテファン醸造所", "answer": true },
+      { "value": "シュパーテン醸造所", "answer": false },
+      { "value": "ヴェルテンブルク醸造所", "answer": false },
+      { "value": "シュレンケルラ醸造所", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 40,
+    "level": 3,
+    "question": "中世ヨーロッパでビールの腐敗防止や香味づけのために、ハーブ類を配合したものが使われていた。その名称を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "グルート", "answer": true },
+      { "value": "フェンネル", "answer": false },
+      { "value": "ツンフト", "answer": false },
+      { "value": "ヴァイス", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 41,
+    "level": 3,
+    "question": "1516年、「ビールは大麦、ホップ、水のみを原料とすべし」という内容の「ビール純粋令」を出したバイエルン公国の君主を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "ヴィルヘルム4世", "answer": true },
+      { "value": "ルートヴィヒ4世", "answer": false },
+      { "value": "アルブレヒト4世", "answer": false },
+      { "value": "ハインリヒ4世", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 42,
+    "level": 2,
+    "question": "アイルランド発祥のビアスタイル「スタウト」の意味を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "古い", "answer": false },
+      { "value": "淡い", "answer": false },
+      { "value": "強い", "answer": true },
+      { "value": "暗い", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 43,
+    "level": 2,
+    "question": "18世紀半ばからビール中のタンパク質や酵母を凝固・沈殿させるために使用され始めたものは何か、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "アイシングラス", "answer": true },
+      { "value": "液体アンモニア", "answer": false },
+      { "value": "グルート", "answer": false },
+      { "value": "コーン", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 44,
+    "level": 2,
+    "question": "「ピルスナー・ウルケル」に関する説明として誤っているものを、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "麦芽100%の下面発酵ビールである", "answer": false },
+      { "value": "世界初のビルスナービールである", "answer": false },
+      {
+        "value": "ウルケルはドイツ語で「元祖」という意味である",
+        "answer": false
+      },
+      { "value": "チェコのプラハで誕生したビールである", "answer": true }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 45,
+    "level": 3,
+    "question": "アンモニア冷凍機は「近代ビールの三大発明」の1つといわれているが、1873年にそれを発明した人物の名前を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "ルイ・パスツール", "answer": false },
+      { "value": "ヨーゼフ・グロル", "answer": false },
+      { "value": "カール・フォン・リンデ", "answer": true },
+      { "value": "エミール・クリスチャン・ハンセン", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 46,
+    "level": 2,
+    "question": "以下の（1）～（3）から導き出される出来事を、次の選択肢より選んでください。\n(1): デンマークのカールスバーグ研究所で発明される\n(2): キューレとともに装置を考案した\n(3): ビールが安価で大量につくれるようになった",
+    "choices": [
+      { "value": "ハンセンが酵母純粋培養法を発明", "answer": true },
+      { "value": "ジェームス・ワルカーが麦汁撹拌機を発明", "answer": false },
+      { "value": "ペインターが王冠製造機を発明", "answer": false },
+      { "value": "リンデがアンモニア冷凍機を発明", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 47,
+    "level": 3,
+    "question": "びんビールに使われる王冠のひだの数は、ほぼ統一されているが、その数を次の選択肢より選んでください。",
+    "choices": [
+      { "value": "19", "answer": false },
+      { "value": "20", "answer": false },
+      { "value": "21", "answer": true },
+      { "value": "22", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 48,
+    "level": 3,
+    "question": "アメリカでは、第一次世界大戦によって禁酒運動は加速し、1920年に禁酒法が施行された。この時、禁止を免れた低アルコールビールを、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "オフ・ビア", "answer": false },
+      { "value": "ドライ・ビア", "answer": false },
+      { "value": "ニア・ビア", "answer": true },
+      { "value": "ゼロ・ビア", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 49,
+    "level": 3,
+    "question": "世界的なビールブランドであるハイネケンが誕生した国を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "オランダ", "answer": true },
+      { "value": "ベルギー", "answer": false },
+      { "value": "デンマーク", "answer": false },
+      { "value": "アメリカ", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 50,
+    "level": 3,
+    "question": "一度絶滅したベルジャンホワイトを1966年に復活させ、「ヒューガルデン ホワイトの生みの親」とも呼ばれる人物を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "ピエール・セリス", "answer": true },
+      { "value": "ヤコブ・クリスチャン・ヤコブセン", "answer": false },
+      { "value": "フリッツ・メイタグ", "answer": false },
+      { "value": "アーサー・ギネス", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 51,
+    "level": 2,
+    "question": "ベルギーホワイトビールの代表銘柄「ヒューガルデン ホワイト」の「ヒューガルデン」は何の名称に由来するか。次の選択肢より選んでください。",
+    "choices": [
+      { "value": "村", "answer": true },
+      { "value": "小麦品種", "answer": false },
+      { "value": "開発者", "answer": false },
+      { "value": "山", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 52,
+    "level": 2,
+    "question": "\"CAMRA\"に関する説明として誤っているものを、次の選択肢より選んでください。",
+    "choices": [
+      {
+        "value": "「グレート・ブリティッシュ・ビア・フェスティバル」を開催している",
+        "answer": false
+      },
+      { "value": "イギリスで結成された組織である", "answer": false },
+      {
+        "value": "伝統的なカスク・ビアを守るために結成された",
+        "answer": false
+      },
+      { "value": "1990年代に設立された", "answer": true }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 53,
+    "level": 2,
+    "question": "アメリカでボストンビール社を創業した人物を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "サミュエル・アダムス", "answer": false },
+      { "value": "ジム・クック", "answer": true },
+      { "value": "フリッツ・メイタグ", "answer": false },
+      { "value": "サム・カラジョーネ", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 54,
+    "level": 2,
+    "question": "イギリスのユーロモニターインターナショナルの調査で、2022年の世界のビール市場シェア第1位のビールメーカーを、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "ハイネケン", "answer": false },
+      { "value": "アンハイザー・ブッシュ・インベブ", "answer": true },
+      { "value": "カールスバーグ", "answer": false },
+      { "value": "華潤ビール", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 55,
+    "level": 2,
+    "question": "アサヒビール社が保有している海外ブランドビールを、次の選択肢より選んでください。（※2023年7月時点）",
+    "choices": [
+      { "value": "クローネンブルグ", "answer": false },
+      { "value": "グロールシュ", "answer": true },
+      { "value": "モレッティ", "answer": false },
+      { "value": "ベックス", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 56,
+    "level": 2,
+    "question": "ABインベブ社が保有するブランドを、次の選択肢より選んでください。（※2023年7月時点）",
+    "choices": [
+      { "value": "333", "answer": false },
+      { "value": "ミラー", "answer": false },
+      { "value": "コロナ", "answer": true },
+      { "value": "タイガー", "answer": false }
+    ],
+    "explanation": "TODO"
   }
 ]

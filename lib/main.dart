@@ -33,11 +33,11 @@ class MainApp extends StatelessWidget {
                 },
                 // FIXME: ボタン系は役割に応じて共通化.
                 style: FilledButton.styleFrom(
-                  backgroundColor: AppColor.mainButtonColor,
+                  backgroundColor: AppColor.mainButton,
                 ),
                 child: const Text(
                   'クイズスタート!!',
-                  style: TextStyle(color: AppColor.buttonTextColor),
+                  style: TextStyle(color: AppColor.buttonText),
                 ),
               ),
             )

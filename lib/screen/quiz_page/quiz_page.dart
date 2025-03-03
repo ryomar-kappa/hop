@@ -18,7 +18,7 @@ class QuizLoadingState extends State<QuizLoadingView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColor.headerColor,
+        backgroundColor: AppColor.header,
         title: const Text(
           '問題',
           style:
@@ -76,7 +76,7 @@ class QuizPage extends State<QuizPageView> {
         return PopScope(
           canPop: false,
           child: AlertDialog(
-            backgroundColor: AppColor.backgroundColor,
+            backgroundColor: AppColor.background,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(16),
             ),
@@ -85,8 +85,8 @@ class QuizPage extends State<QuizPageView> {
               textAlign: TextAlign.center,
               style: TextStyle(
                   color: isCorrect()
-                      ? AppColor.correctAnswerColor
-                      : AppColor.incorrectAnswerColor),
+                      ? AppColor.correctAnswer
+                      : AppColor.incorrectAnswer),
             ),
             content: Text(
               widget.quizList[currentQuizCount - 1].explanation,
@@ -142,7 +142,7 @@ class QuizPage extends State<QuizPageView> {
     return SafeArea(
       child: Container(
         width: double.infinity,
-        color: AppColor.backgroundColor,
+        color: AppColor.background,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Column(
@@ -180,12 +180,12 @@ class QuizPage extends State<QuizPageView> {
                           selectedChoice == null ? null : () => onAnswer(),
                       style: FilledButton.styleFrom(
                         backgroundColor: selectedChoice == null
-                            ? AppColor.disabledButtonColor
-                            : AppColor.mainButtonColor,
+                            ? AppColor.disabledButton
+                            : AppColor.generalActionButton,
                       ),
                       child: const Text(
                         '回答',
-                        style: TextStyle(color: AppColor.buttonTextColor),
+                        style: TextStyle(color: AppColor.buttonText),
                       ),
                     ),
                   ],
@@ -242,7 +242,7 @@ class ChoiceArea extends StatelessWidget {
         constraints: const BoxConstraints(minHeight: 64),
         decoration: BoxDecoration(
             color: isSelected
-                ? AppColor.correctAnswerColor
+                ? AppColor.quizFocusedBackground
                 : AppColor.quizBackground,
             borderRadius: const BorderRadius.all(Radius.circular(16))),
         child: Row(

@@ -745,5 +745,173 @@
       { "value": "タイガー", "answer": false }
     ],
     "explanation": "TODO"
+  },
+  {
+    "id": 57,
+    "level": 3,
+    "question": "ビールのことを「殊のほか悪しき物」と否定的に紹介した1724（享保9）年に刊行された書物を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "東方見聞録", "answer": false },
+      { "value": "蘭学事始", "answer": false },
+      { "value": "阿蘭陀問答", "answer": true },
+      { "value": "西洋衣食住", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 58,
+    "level": 3,
+    "question": "日本人経営者による初めてのビール会社は、1872（明治5）年創業の「渋谷ビール」である。この「渋谷」の読み方で正しいものを、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "シブヤ", "answer": false },
+      { "value": "シブタニ", "answer": true },
+      { "value": "ジュウコク", "answer": false },
+      { "value": "ジュウタニ", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 59,
+    "level": 2,
+    "question": "1869（明治2）年、日本初のビール醸造所ジャパン・ブルワリーを開業した人物を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "ローゼンフェルト", "answer": true },
+      { "value": "ウィリアム・コープランド", "answer": false },
+      { "value": "トーマス・グラバー", "answer": false },
+      { "value": "トーマス・アンチセル", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 60,
+    "level": 3,
+    "question": "1885（明治18）年、スプリングバレー・ブルワリーの跡地に設立され、1888（明治21）年に「キリンビール」を発売した会社を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "ジャパン・ブルワリー・カンパニー", "answer": true },
+      { "value": "明治屋", "answer": false },
+      { "value": "渋谷ビール", "answer": false },
+      { "value": "中埜酢店", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 61,
+    "level": 3,
+    "question": "福沢諭吉は著書『西洋衣食住』で、ビールについて「（ ）を開く為に妙なり」と書いている。（ ）に入る語句を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "目頭", "answer": false },
+      { "value": "胸膈", "answer": true },
+      { "value": "鼻先", "answer": false },
+      { "value": "喉元", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 62,
+    "level": 3,
+    "question": "幕末に密航し、ドイツでビール醸造を学んだ後、開拓使麦酒醸造所に雇われたビール醸造技師を次の選択肢より選んでください。",
+    "choices": [
+      { "value": "中川清兵衛", "answer": true },
+      { "value": "村橋久成", "answer": false },
+      { "value": "中又左衛門", "answer": false },
+      { "value": "鳥井駒吉", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 63,
+    "level": 3,
+    "question": "1889（明治22）年、大阪で設立された大阪麦酒会社の創業者は誰か、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "鳥井駒吉", "answer": true },
+      { "value": "馬越恭平", "answer": false },
+      { "value": "磯野計", "answer": false },
+      { "value": "渋沢栄一", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 64,
+    "level": 3,
+    "question": "明治時代、日本麦酒の社長を務め、日本初のビヤホールを銀座にオープンさせるなど経営手腕を発揮した人物で、後年「東洋のビール王」とも呼ばれた人物を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "渋沢栄一", "answer": false },
+      { "value": "中埜又左衛門", "answer": false },
+      { "value": "馬越恭平", "answer": true },
+      { "value": "岩崎弥太郎", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 65,
+    "level": 3,
+    "question": "明治期に500以上の企業の創業に関わり、「日本資本主義の父」と言われ、明治のビール4大プランドであるサッポロ、キリン、エビス、アサヒ全ての経営にも関わっていた人物を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "大倉喜八郎", "answer": false },
+      { "value": "渋沢栄一", "answer": true },
+      { "value": "黒田清隆", "answer": false },
+      { "value": "福沢諭吉", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 66,
+    "level": 3,
+    "question": "1901（明治34）年、中小のビール会社の廃業が相次いだが、その原因となった出来事を次の選択肢より選んでください。",
+    "choices": [
+      { "value": "輸入ビールの拡大", "answer": false },
+      { "value": "麦酒税の導入", "answer": true },
+      { "value": "原料の高騰", "answer": false },
+      { "value": "水不足", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 67,
+    "level": 3,
+    "question": "1906（明治39）年、日本麦酒、札幌麦酒、大阪麦酒の3社が合併し、国内ビールシェア7割を誇るビール会社が設立されたが、その名称を次の選択肢より選んでください。",
+    "choices": [
+      { "value": "寿屋", "answer": false },
+      { "value": "大日本麦酒", "answer": true },
+      { "value": "麒麟麦酒", "answer": false },
+      { "value": "丸三麦酒", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 68,
+    "level": 2,
+    "question": "1906（明治39）年に誕生した大日本麦酒株式会社の説明について、正しいものを次の選択肢より選んでください。",
+    "choices": [
+      { "value": "3社合併による国内シェアは7割に相当した", "answer": true },
+      { "value": "3社の既存ブランドの流通網を整理・統合した", "answer": false },
+      { "value": "総代理店を明治屋とし販売体制を強化した", "answer": false },
+      { "value": "ホップや大麦の輸出を開始し、外貨を稼いだ", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 69,
+    "level": 3,
+    "question": "1930（昭和5）年にオラガビールを発売した会社で、現サントリーホールデイングス（サントリービール）の前身となる会社を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "日英醸造", "answer": false },
+      { "value": "東洋醸造", "answer": false },
+      { "value": "中埜酢店", "answer": false },
+      { "value": "寿屋", "answer": true }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 70,
+    "level": 3,
+    "question": "1943（昭和18）年にビールの商標が廃止されたが、この狙いとして最も適切なものを次の選択肢より選んでください。",
+    "choices": [
+      { "value": "敵性語の排除", "answer": false },
+      { "value": "ガソリンの節約", "answer": true },
+      { "value": "ビール工場の再編", "answer": false },
+      { "value": "宣伝の禁止", "answer": false }
+    ],
+    "explanation": "TODO"
   }
 ]

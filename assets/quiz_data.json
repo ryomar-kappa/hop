@@ -1027,9 +1027,9 @@
     "level": 3,
     "question": "国産大手ビールメーカーのリターナブルびんには、大びん、中びん、小びんがある。大びんの容量を、次の選択肢より選んでください。",
     "choices": [
-      { "value": "500ml", "answer": true },
+      { "value": "500ml", "answer": false },
       { "value": "568ml", "answer": false },
-      { "value": "633ml ", "answer": false },
+      { "value": "633ml ", "answer": true },
       { "value": "750ml", "answer": false }
     ],
     "explanation": "TODO"

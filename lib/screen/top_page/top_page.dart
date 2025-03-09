@@ -25,6 +25,7 @@ class TopPageState extends State<TopPageView> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            const Text('ActionsTest'),
             _difficulityLevelSegmentButton(),
             const SizedBox(height: 64),
             _quizModeSegmentedButton(),

@@ -45,4 +45,4 @@ jobs:
 
       - name: Upload to App Store Connect
         run: |
-          xcrun altool --upload-app -f ios/Runner.ipa -t ios -u ${{ secrets.APPLE_ID }} -p ${{ secrets.APP_SPECIFIC_PASSWORD }} --type ios
+          xcrun altool --upload-app -f ios/hop_client.ipa -t ios -u ${{ secrets.APPLE_ID }} -p ${{ secrets.APP_SPECIFIC_PASSWORD }} --type ios

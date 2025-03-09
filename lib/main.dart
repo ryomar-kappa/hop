@@ -31,52 +31,60 @@ class TopPageState extends State<TopPageView> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SegmentedButton(
-              segments: DifficultyLevel.values
-                  .map(
-                    (e) => ButtonSegment(value: e, icon: Text(e.jaName)),
-                  )
-                  .toList(),
-              selected: {selectedDifficultLevel},
-              onSelectionChanged: (selected) {
-                setState(() {
-                  selectedDifficultLevel = selected.first;
-                });
-              },
-              showSelectedIcon: false,
-              style: SegmentedButton.styleFrom(
-                  backgroundColor: AppColor.nonSelectionColor,
-                  foregroundColor: AppColor.blackText,
-                  textStyle: const TextStyle(color: AppColor.whiteText),
-                  selectedForegroundColor: AppColor.blackText,
-                  selectedBackgroundColor: AppColor.selectionColor),
-            ),
+            _difficulityLevelSegmentButton(),
             const SizedBox(height: 64),
-            SegmentedButton(
-              segments: QuizMode.values
-                  .map(
-                    (e) => ButtonSegment(value: e, icon: Text('${e.num}問')),
-                  )
-                  .toList(),
-              selected: {selectedQuizMode},
-              onSelectionChanged: (selected) {
-                setState(() {
-                  selectedQuizMode = selected.first;
-                });
-              },
-              showSelectedIcon: false,
-              style: SegmentedButton.styleFrom(
-                  backgroundColor: AppColor.nonSelectionColor,
-                  foregroundColor: AppColor.blackText,
-                  textStyle: const TextStyle(color: AppColor.whiteText),
-                  selectedForegroundColor: AppColor.blackText,
-                  selectedBackgroundColor: AppColor.selectionColor),
-            ),
+            _quizModeSegmentedButton(),
             const SizedBox(height: 64),
             Center(child: _startButton(context))
           ],
         ),
       ),
+    );
+  }
+
+  SegmentedButton<QuizMode> _quizModeSegmentedButton() {
+    return SegmentedButton(
+      segments: QuizMode.values
+          .map(
+            (e) => ButtonSegment(value: e, icon: Text('${e.num}問')),
+          )
+          .toList(),
+      selected: {selectedQuizMode},
+      onSelectionChanged: (selected) {
+        setState(() {
+          selectedQuizMode = selected.first;
+        });
+      },
+      showSelectedIcon: false,
+      style: SegmentedButton.styleFrom(
+          backgroundColor: AppColor.nonSelectionColor,
+          foregroundColor: AppColor.blackText,
+          textStyle: const TextStyle(color: AppColor.whiteText),
+          selectedForegroundColor: AppColor.blackText,
+          selectedBackgroundColor: AppColor.selectionColor),
+    );
+  }
+
+  SegmentedButton<DifficultyLevel> _difficulityLevelSegmentButton() {
+    return SegmentedButton(
+      segments: DifficultyLevel.values
+          .map(
+            (e) => ButtonSegment(value: e, icon: Text(e.jaName)),
+          )
+          .toList(),
+      selected: {selectedDifficultLevel},
+      onSelectionChanged: (selected) {
+        setState(() {
+          selectedDifficultLevel = selected.first;
+        });
+      },
+      showSelectedIcon: false,
+      style: SegmentedButton.styleFrom(
+          backgroundColor: AppColor.nonSelectionColor,
+          foregroundColor: AppColor.blackText,
+          textStyle: const TextStyle(color: AppColor.whiteText),
+          selectedForegroundColor: AppColor.blackText,
+          selectedBackgroundColor: AppColor.selectionColor),
     );
   }
 
@@ -87,8 +95,7 @@ class TopPageState extends State<TopPageView> {
             context,
             MaterialPageRoute(
                 // FIXME: 画面にモード選択が追加されたら修正.
-                builder: (context) =>
-                    const QuizLoadingView(mode: QuizMode.thirty)));
+                builder: (context) => QuizLoadingView(mode: selectedQuizMode)));
       },
       // FIXME: ボタン系は役割に応じて共通化.
       style: FilledButton.styleFrom(

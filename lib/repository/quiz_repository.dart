@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
-import 'package:hop_client/main.dart';
+import 'package:hop_client/model/difficulty_level.dart';
 import 'package:hop_client/model/quiz.dart';
 
 class QuizRepository {

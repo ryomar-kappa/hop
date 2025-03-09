@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hop_client/app_color.dart';
-import 'package:hop_client/main.dart';
-import 'package:hop_client/model/enum.dart';
+import 'package:hop_client/model/choice_prefix.dart';
+import 'package:hop_client/model/difficulty_level.dart';
 import 'package:hop_client/model/quiz.dart';
 import 'package:hop_client/repository/quiz_repository.dart';
 import 'package:hop_client/screen/complete_page/complete_page.dart';

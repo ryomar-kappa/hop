@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hop_client/main.dart';
+import 'package:hop_client/screen/top_page/top_page.dart';
 
 class CompletePage extends StatelessWidget {
   const CompletePage({super.key});

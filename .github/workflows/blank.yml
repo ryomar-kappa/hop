@@ -40,10 +40,7 @@ jobs:
       - name: Export IPA
         run: |
           cd ios
-          xcodebuild -exportArchive -archivePath Runner.xcarchive -exportOptionsPlist ExportOptions.plist -exportPath Runner.ipa -allowProvisioningUpdates -authenticationKeyPath `pwd`/private_keys/AuthKey_${{ secrets.APPLE_API_ISSUE_ID }}.p8 -authenticationKeyID ${{ secrets.APPLE_API_KEY_ID }} -authenticationKeyIssuerID ${{ secrets.APPLE_API_ISSUE_ID }}
-
-      - name: Set ITMS Transporter Environment Variable
-        run: echo "ITMSTRANSPORTER_FORCE_ITMS_PACKAGE_UPLOAD=true" >> $GITHUB_ENV
+          xcodebuild -exportArchive -archivePath Runner.xcarchive -exportOptionsPlist ExportOptions.plist -exportPath ./ -allowProvisioningUpdates -authenticationKeyPath `pwd`/private_keys/AuthKey_${{ secrets.APPLE_API_ISSUE_ID }}.p8 -authenticationKeyID ${{ secrets.APPLE_API_KEY_ID }} -authenticationKeyIssuerID ${{ secrets.APPLE_API_ISSUE_ID }}
 
       - name: Upload to App Store Connect
         run: |

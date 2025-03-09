@@ -33,25 +33,29 @@ class QuizLoadingState extends State<QuizLoadingView> {
           future:
               QuizRepository().fetchByDifficurityLevel(widget.difficultyLevel),
           builder: (context, snapshot) {
-            if (snapshot.connectionState == ConnectionState.waiting) {
-              return const Center(
-                child: CircularProgressIndicator(),
-              );
-            } else if (snapshot.connectionState == ConnectionState.done) {
-              final quizList = snapshot.data!;
-              quizList.shuffle();
+            switch (snapshot.connectionState) {
+              case ConnectionState.waiting:
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              case ConnectionState.done:
+                {
+                  final quizList = snapshot.data!;
+                  quizList.shuffle();
 
-              int questionNum = widget.mode.num;
+                  final questionNum = widget.mode.num;
 
-              if (quizList.length > questionNum) {
-                quizList.removeRange(questionNum, quizList.length);
-              }
-              for (var quiz in quizList) {
-                quiz.choices.shuffle();
-              }
-              return QuizPageView(quizList: quizList);
-            } else {
-              return const Center(child: Text('データがありません'));
+                  if (quizList.length > questionNum) {
+                    quizList.removeRange(questionNum, quizList.length);
+                  }
+                  for (var quiz in quizList) {
+                    quiz.choices.shuffle();
+                  }
+                  return QuizPageView(quizList: quizList);
+                }
+              case ConnectionState.none:
+              case ConnectionState.active:
+                return const Center(child: Text('データがありません'));
             }
           },
         ),

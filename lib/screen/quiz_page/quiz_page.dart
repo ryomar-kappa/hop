@@ -185,7 +185,7 @@ class QuizPage extends State<QuizPageView> {
                       ),
                       child: const Text(
                         '回答',
-                        style: TextStyle(color: AppColor.buttonText),
+                        style: TextStyle(color: AppColor.whiteText),
                       ),
                     ),
                   ],
@@ -265,7 +265,7 @@ class ChoiceArea extends StatelessWidget {
               child: Text(
                 choice.value,
                 style: const TextStyle(
-                    color: AppColor.quizText, fontWeight: FontWeight.bold),
+                    color: AppColor.blackText, fontWeight: FontWeight.bold),
               ),
             ))
           ],

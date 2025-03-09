@@ -17,7 +17,8 @@ class CompletePage extends StatelessWidget {
                     Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const MainApp()), // ホーム画面への遷移
+                          builder: (context) =>
+                              const TopPageView()), // ホーム画面への遷移
                       (Route<dynamic> route) => false, // スタック上の他のすべての画面を削除
                     );
                   },

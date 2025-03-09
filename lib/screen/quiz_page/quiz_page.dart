@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hop_client/app_color.dart';
+import 'package:hop_client/main.dart';
 import 'package:hop_client/model/enum.dart';
 import 'package:hop_client/model/quiz.dart';
 import 'package:hop_client/repository/quiz_repository.dart';
@@ -7,7 +8,9 @@ import 'package:hop_client/screen/complete_page/complete_page.dart';
 
 class QuizLoadingView extends StatefulWidget {
   final QuizMode mode;
-  const QuizLoadingView({super.key, required this.mode});
+  final DifficultyLevel difficultyLevel;
+  const QuizLoadingView(
+      {super.key, required this.mode, required this.difficultyLevel});
 
   @override
   State<StatefulWidget> createState() => QuizLoadingState();
@@ -27,7 +30,8 @@ class QuizLoadingState extends State<QuizLoadingView> {
       ),
       body: SafeArea(
         child: FutureBuilder<List<Quiz>>(
-          future: QuizRepository().fetch(),
+          future:
+              QuizRepository().fetchByDifficurityLevel(widget.difficultyLevel),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               return const Center(

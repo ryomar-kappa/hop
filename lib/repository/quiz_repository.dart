@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/services.dart';
+import 'package:hop_client/main.dart';
 import 'package:hop_client/model/quiz.dart';
 
 class QuizRepository {
@@ -13,16 +14,22 @@ class QuizRepository {
 
     return jsonData.map((item) {
       return Quiz(
-        question: item['question'],
-        choices: List<Choice>.from(
-          List<Map<String, dynamic>>.from(item['choices'])
-              .map((choice) => Choice(
-                    value: choice['value'],
-                    answer: choice['answer'],
-                  )),
-        ),
-        explanation: item['explanation'],
-      );
+          question: item['question'],
+          choices: List<Choice>.from(
+            List<Map<String, dynamic>>.from(item['choices'])
+                .map((choice) => Choice(
+                      value: choice['value'],
+                      answer: choice['answer'],
+                    )),
+          ),
+          explanation: item['explanation'],
+          level: item['level']);
     }).toList();
+  }
+
+  Future<List<Quiz>> fetchByDifficurityLevel(
+      DifficultyLevel difficurltyLevel) async {
+    final allQuiz = await fetch();
+    return allQuiz.where((e) => e.level == difficurltyLevel.level).toList();
   }
 }

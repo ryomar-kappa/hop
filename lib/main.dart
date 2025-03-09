@@ -95,7 +95,10 @@ class TopPageState extends State<TopPageView> {
             context,
             MaterialPageRoute(
                 // FIXME: 画面にモード選択が追加されたら修正.
-                builder: (context) => QuizLoadingView(mode: selectedQuizMode)));
+                builder: (context) => QuizLoadingView(
+                      mode: selectedQuizMode,
+                      difficultyLevel: selectedDifficultLevel,
+                    )));
       },
       // FIXME: ボタン系は役割に応じて共通化.
       style: FilledButton.styleFrom(
@@ -110,11 +113,12 @@ class TopPageState extends State<TopPageView> {
 }
 
 enum DifficultyLevel {
-  firstClass('1級'),
-  secondClass('2級'),
-  thirdClass('3級');
+  firstClass('1級', 1),
+  secondClass('2級', 2),
+  thirdClass('3級', 3);
 
   final String jaName;
+  final int level;
 
-  const DifficultyLevel(this.jaName);
+  const DifficultyLevel(this.jaName, this.level);
 }

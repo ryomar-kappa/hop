@@ -2,12 +2,13 @@ class Quiz {
   final String question;
   final List<Choice> choices;
   final String explanation;
+  final int level;
 
-  Quiz({
-    required this.question,
-    required this.choices,
-    required this.explanation,
-  });
+  Quiz(
+      {required this.question,
+      required this.choices,
+      required this.explanation,
+      required this.level});
 }
 
 class Choice {

@@ -5,7 +5,6 @@ on:
     branches: ["main"]
   pull_request:
     branches: ["main"]
-
   workflow_dispatch:
 
 jobs:
@@ -18,22 +17,24 @@ jobs:
 
       - name: Archive
         run: |
-          xcodebuild archive -project project.xcodeproj -scheme project -archivePath project.xcarchive -sdk iphoneos -configuration Release CODE_SIGNING_ALLOWED=NO
+          cd ios
+          xcodebuild archive -project Runner.xcodeproj -scheme Runner -archivePath Runner.xcarchive -sdk iphoneos -configuration Release CODE_SIGNING_ALLOWED=NO
 
       - name: Create ExportOptions.plist
         run: |
-          echo '${{ secrets.EXPORT_OPTIONS }}' > ExportOptions.plist
-          cat ExportOptions.plist
+          echo '${{ secrets.EXPORT_OPTIONS }}' > ios/ExportOptions.plist
+          cat ios/ExportOptions.plist
 
       - name: Create Private Key
         run: |
-          mkdir private_keys
-          echo -n '${{ secrets.APPLE_API_KEY_BASE64 }}' | base64 --decode > ./private_keys/AuthKey_${{ secrets.APPLE_API_ISSUER_ID }}.p8
+          mkdir -p ios/private_keys
+          echo -n '${{ secrets.APPLE_API_KEY_BASE64 }}' | base64 --decode > ios/private_keys/AuthKey_${{ secrets.APPLE_API_ISSUER_ID }}.p8
 
       - name: Export IPA
         run: |
-          xcodebuild -exportArchive -archivePath project.xcarchive -exportOptionsPlist ExportOptions.plist -exportPath project.ipa -allowProvisioningUpdates -authenticationKeyPath `pwd`/private_keys/AuthKey_${{ secrets.APPLE_API_ISSUER_ID }}.p8 -authenticationKeyID ${{ secrets.APPLE_API_KEY_ID }} -authenticationKeyIssuerID ${{ secrets.APPLE_API_ISSUER_ID }}
+          cd ios
+          xcodebuild -exportArchive -archivePath Runner.xcarchive -exportOptionsPlist ExportOptions.plist -exportPath Runner.ipa -allowProvisioningUpdates -authenticationKeyPath `pwd`/private_keys/AuthKey_${{ secrets.APPLE_API_ISSUER_ID }}.p8 -authenticationKeyID ${{ secrets.APPLE_API_KEY_ID }} -authenticationKeyIssuerID ${{ secrets.APPLE_API_ISSUER_ID }}
 
       - name: Upload to App Store Connect
         run: |
-          xcrun altool --upload-app -f project.ipa/project.ipa -t ios -u ${{ secrets.APPLE_ID }} -p ${{ secrets.APP_SPECIFIC_PASSWORD }} --type ios
+          xcrun altool --upload-app -f ios/Runner.ipa/Runner.ipa -t ios -u ${{ secrets.APPLE_ID }} -p ${{ secrets.APP_SPECIFIC_PASSWORD }} --type ios

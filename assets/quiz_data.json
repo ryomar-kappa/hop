@@ -913,5 +913,500 @@
       { "value": "宣伝の禁止", "answer": false }
     ],
     "explanation": "TODO"
+  },
+  {
+    "id": 71,
+    "level": 3,
+    "question": "1949（昭和24）年、過度経済力集中排除法に基づき、大日本麦酒は2社に分割されたが、その2社の組み合わせとして正しいものを次の選択肢より選んでください。",
+    "choices": [
+      { "value": "札幌麦酒／大阪麦酒", "answer": false },
+      { "value": "恵比寿麦酒／日本麦酒", "answer": false },
+      { "value": "大阪麦酒／朝日麦酒", "answer": false },
+      { "value": "日本麦酒／朝日麦酒", "answer": true }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 72,
+    "level": 3,
+    "question": "昭和30年代に日本のビール消費量は飛躍的に伸びるが、その理由の1つとして最も適しているものを、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "札幌オリンピックの開催", "answer": false },
+      { "value": "電気冷蔵庫の普及", "answer": true },
+      { "value": "ビール税の減税", "answer": false },
+      { "value": "ビールの中味多様化", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 73,
+    "level": 3,
+    "question": "1957（昭和32）年、「タカラビール」を発売しビール業界に参入した焼酎首位の宝酒造は、業界初の容量のびんを採用した。その容量を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "334ml", "answer": false },
+      { "value": "500ml", "answer": true },
+      { "value": "633ml", "answer": false },
+      { "value": "1957ml", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 74,
+    "level": 2,
+    "question": "ビール業界の出来事を古い順に並べたものを、次の選択肢より選んでください。\nA: ドライ戦争\nB: 地ビール解禁\nC: 第3のビールの登場\nD: 容器戦争",
+    "choices": [
+      { "value": "A => B => D => C", "answer": false },
+      { "value": "D => A => C => B", "answer": false },
+      { "value": "D => A => B => C", "answer": true },
+      { "value": "A => D => B => C", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 75,
+    "level": 3,
+    "question": "1994（平成6）年の「地ビール解禁」で最初に誕生した地ビール醸造所 2社のうち、1社はエチゴビールである。もう1社を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "木内酒造", "answer": false },
+      { "value": "オホーツクビール", "answer": true },
+      { "value": "ベアレン醸造所", "answer": false },
+      { "value": "銀河高原ビール", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 76,
+    "level": 2,
+    "question": "次のAからCの出来事を、古い順に並べたものを選択肢より選んでください。\nA: 「サントリー純生」発売\nB: 「アサヒスーパードライ」発売\nC: 「タカラビール」発売",
+    "choices": [
+      { "value": "A => B => C", "answer": false },
+      { "value": "A => C => B", "answer": false },
+      { "value": "C => A => B", "answer": true },
+      { "value": "C => B => A", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 77,
+    "level": 3,
+    "question": "「第3のビール」（新ジャンル）カテゴリーとして最初に発売された商品を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "ホップス", "answer": false },
+      { "value": "北海道生搾り", "answer": false },
+      { "value": "のどごし＜生＞", "answer": false },
+      { "value": "ドラフトワン", "answer": true }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 78,
+    "level": 2,
+    "question": "日本でノンアルコールビールは2009年以降急増するが、その大きな要因となった出来事を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "酒税法の改正", "answer": false },
+      { "value": "道路交通法の改正", "answer": true },
+      { "value": "未成年飲酒禁止法の改正", "answer": false },
+      { "value": "ホームブルーイングの解禁", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 79,
+    "level": 3,
+    "question": "ドイツ留学中にビールの利尿作用について研究をした明治の文豪を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "森鴎外", "answer": true },
+      { "value": "夏目漱石", "answer": false },
+      { "value": "芥川龍之介 ", "answer": false },
+      { "value": "太宰治", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 80,
+    "level": 3,
+    "question": "国産大手ビールメーカーのリターナブルびんには、大びん、中びん、小びんがある。大びんの容量を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "500ml", "answer": true },
+      { "value": "568ml", "answer": false },
+      { "value": "633ml ", "answer": false },
+      { "value": "750ml", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 81,
+    "level": 3,
+    "question": "1958（昭和33）年に、日本で最初に缶ビールを発売したビール会社を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "アサヒ", "answer": true },
+      { "value": "サッポロ", "answer": false },
+      { "value": "キリン ", "answer": false },
+      { "value": "サントリー", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 82,
+    "level": 3,
+    "question": "日本の酒税法では、アルコール何%以上を「酒類」と定義しているか、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "3%", "answer": false },
+      { "value": "2%", "answer": false },
+      { "value": "1% ", "answer": true },
+      { "value": "0.5%", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 83,
+    "level": 3,
+    "question": "日本の酒税法についての説明で、誤っているものを、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "お酒の定義や分類・税率などを定めている", "answer": false },
+      { "value": "20歳未満の飲酒禁止を定めている", "answer": true },
+      { "value": "製造免許の取扱いについて定めている ", "answer": false },
+      { "value": "販売免許の取扱いについて定めている", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 84,
+    "level": 2,
+    "question": "日本の酒税法上の「ビール」について、正しいものを、次の選択肢より選んでください。",
+    "choices": [
+      {
+        "value": "ビールとは麦芽、ホップ、及び水を原料として蒸留させたものである",
+        "answer": false
+      },
+      {
+        "value": "麦芽比率が80%以上のものがビールであり、80%未満はビールに該当しない",
+        "answer": false
+      },
+      {
+        "value": "ビールの副原料に、こうりゃん、ばれいしょ、デンプンは使用できない ",
+        "answer": false
+      },
+      {
+        "value": "2018年の酒税法改正で、ビールに使用できる副原料が拡大した",
+        "answer": true
+      }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 85,
+    "level": 2,
+    "question": "2018年4月の酒税法改正後に追加された副原料で正しいものを、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "とうもろこし", "answer": false },
+      { "value": "ばれいしょ", "answer": false },
+      { "value": "こうりゃん ", "answer": false },
+      { "value": "かつお節", "answer": true }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 86,
+    "level": 2,
+    "question": "2018年4月の酒税法改正で、新たに追加となった副原料（果実やコリアンダ一等香味料）のビールでの使用は、麦芽重量の何%まで認められているか、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "3%", "answer": false },
+      { "value": "5%", "answer": true },
+      { "value": "7%", "answer": false },
+      { "value": "10%", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 87,
+    "level": 2,
+    "question": "財務省による「平成29年度税制改正」における酒税法等の改正の目的にあてはまらないものを、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "酒税制度の簡素化・合理化", "answer": false },
+      {
+        "value": "同一分類間（ビール、発泡酒、新ジャンルなど）の税率格差の解消",
+        "answer": false
+      },
+      { "value": "ビール産業の国際競争力強化", "answer": false },
+      { "value": "サステナブルな原料調達の推進", "answer": true }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 88,
+    "level": 3,
+    "question": "2026年10月に、ビール、発泡酒、新ジャンルの酒税額が統一されるが、その金額は350mlあたりいくらか。次の選択肢より選んでください。",
+    "choices": [
+      { "value": "約38円", "answer": false },
+      { "value": "約47円", "answer": false },
+      { "value": "約54円", "answer": true },
+      { "value": "約63円", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 89,
+    "level": 3,
+    "question": "日本のビールの表示基準における「生ビール」に該当するものはどれか。次の選択肢より選んでください。",
+    "choices": [
+      { "value": "樽詰ビール", "answer": false },
+      { "value": "非熱処理ビール", "answer": true },
+      { "value": "淡色ビール", "answer": false },
+      { "value": "下面発酵ビール", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 90,
+    "level": 2,
+    "question": "2018年に日本でクラフトビールの定義を発表した団体はどれか、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "ビール酒造組合", "answer": false },
+      { "value": "全国地ビール醸造者協議会", "answer": true },
+      { "value": "日本地ビール協会", "answer": false },
+      { "value": "日本ビアジャーナリスト", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 91,
+    "level": 3,
+    "question": "1986（昭和61）年に東京・神田で開業したベルギービール専門の飲食店を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "麦酒倶楽部ポパイ", "answer": false },
+      { "value": "ブラッセルズ", "answer": true },
+      { "value": "クラフトビアマーケット", "answer": false },
+      { "value": "BEER BELLY", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 92,
+    "level": 3,
+    "question": "「ブルーパブ」とは何か。最も適切なものを、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "店内でビールを醸造し提供する飲食店のこと", "answer": true },
+      { "value": "有名な注ぎ手がいる飲食店のこと", "answer": false },
+      { "value": "店内でビールが飲める酒販店のこと", "answer": false },
+      {
+        "value": "鎮静効果のある青色の照明を使用している飲食店のこと",
+        "answer": false
+      }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 93,
+    "level": 3,
+    "question": "「灘コロンビア」「ビアライゼ'98」「銀座ライオン」「キリンシティ」「ビールスタンド重富」。各店に共通する特徴として最も適しているものを、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "有名な注ぎ手が輩出もしくは在籍している", "answer": true },
+      { "value": "常時20種類以上のビールを提供している", "answer": false },
+      { "value": "マイクロブルワリーを併設している", "answer": false },
+      { "value": "大手ビール会社の子会社である", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 94,
+    "level": 1,
+    "question": "「ピルスナーウルケル」を最高の品質で提供し、自らの言葉でその歴史や品質を語り、ブランドの魅力を発信していく役割を担う注ぎ手の名称を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "タップスター", "answer": true },
+      { "value": "ビアソムリエ", "answer": false },
+      { "value": "超達人", "answer": false },
+      { "value": "タップエリート", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 95,
+    "level": 2,
+    "question": "スイングカランとは何か。次の選択肢より選んでください。",
+    "choices": [
+      { "value": "回転式のハンドルで開け閉めできるカラン", "answer": true },
+      {
+        "value": "ビールを注出する際に管楽器のような音が鳴るカラン",
+        "answer": false
+      },
+      {
+        "value": "注ぎ手がゴルフのスイングをするように注出するカラン",
+        "answer": false
+      },
+      { "value": "泡付け法でゆっくり注ぐのに適したカラン", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 96,
+    "level": 2,
+    "question": "ベルギービールウィークエンドの説明として正しいものを、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "ベルギーで開催される日本ビールの紹介", "answer": false },
+      {
+        "value": "一般客は入場できず、飲食店関係者のための展示会",
+        "answer": false
+      },
+      { "value": "週末だけ開催するビアフエスティバル", "answer": false },
+      {
+        "value": "ベルギービールを100種類以上飲めるビアフェステイバル",
+        "answer": true
+      }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 97,
+    "level": 3,
+    "question": "世界最大のビールの祭典「オクトーバーフェスト」が開催されるドイツの都市を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "ベルリン", "answer": false },
+      { "value": "ミュンヘン", "answer": true },
+      { "value": "ハンブルク", "answer": false },
+      { "value": "ケルン", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 98,
+    "level": 2,
+    "question": "ドイツで開催される世界最大のビールの祭典「オクトーバーフェスト」でビールを提供できるのは、地元ミュンヘンの6つの醸造所に限られるが、それに該当するものを、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "ヴァイエンシュテファン", "answer": false },
+      { "value": "ピットブルガー", "answer": false },
+      { "value": "シュパーテン", "answer": true },
+      { "value": "エルディンガー", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 99,
+    "level": 3,
+    "question": "ドイツの「オクトーバーフェスト」で使用される「マス」と呼ばれるジョッキの容量を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "0.5L", "answer": false },
+      { "value": "1L", "answer": true },
+      { "value": "1.5L", "answer": false },
+      { "value": "2L", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 100,
+    "level": 3,
+    "question": "ドイツ語で乾杯を意味する言葉を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "サルー", "answer": false },
+      { "value": "プロースト", "answer": true },
+      { "value": "チンチン", "answer": false },
+      { "value": "コンベ", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 101,
+    "level": 2,
+    "question": "「乾杯」に相当する言葉として、国名と言葉の組合せが誤っているものを、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "国名：ドイツ、言葉：プロースト", "answer": false },
+      { "value": "国名：チェコ、言葉：サル", "answer": true },
+      { "value": "国名：アイルランド、言葉：スロンチャ", "answer": false },
+      { "value": "国名：韓国、言葉：コンベ", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 102,
+    "level": 3,
+    "question": "日本におけるビールメーカーの業界団体「ビール酒造組合」に加盟しているのは何社か、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "3社", "answer": false },
+      { "value": "4社", "answer": false },
+      { "value": "5社", "answer": true },
+      { "value": "6社", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 103,
+    "level": 2,
+    "question": "次のA～Cの3つから導き出される人物を、次の選択肢より選んでください。\nA: イラストレーター\nB: ホップ栽培者\nC: 日本ビアジャーナリスト協会代表",
+    "choices": [
+      { "value": "藤原ヒロユキ", "answer": true },
+      { "value": "鈴木成宗", "answer": false },
+      { "value": "井手直行", "answer": false },
+      { "value": "重富寛", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 104,
+    "level": 2,
+    "question": "1994年に設立された「日本地ビール協会」の活動に当てはまらないものを、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "ビアスタイル・ガイドラインの制定", "answer": false },
+      { "value": "ビアテイスターの養成と認定", "answer": false },
+      { "value": "大麦・ホップの格付け", "answer": true },
+      { "value": "ビール審査会の主催", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 105,
+    "level": 3,
+    "question": "1996年からアメリカで開催される「ビールのオリンピック」とも称されるビール審査会を、次の選択肢より選んでください。",
+    "choices": [
+      {
+        "value": "IBA（インターナショナル・ブルーイング・アワード）",
+        "answer": false
+      },
+      { "value": "IBC（インターナショナル・ビアカップ）", "answer": false },
+      { "value": "WBC（ワールド・ビア・カップ）", "answer": true },
+      { "value": "WBA（ワールド・ビア・アワード）", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 106,
+    "level": 2,
+    "question": "WBA（ワールド・ビア・アワード）を主催する団体を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "ヴィクトリア州農業協会", "answer": false },
+      { "value": "ブルワーズ・アソシエーション", "answer": false },
+      { "value": "パラグラフ・パブリッシング社", "answer": true },
+      { "value": "日本地ビール協会", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 107,
+    "level": 2,
+    "question": "1984年にチャーリーパパジアンが出版したビールの自家醸造の教科書を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "ABC・フォー・ホームブルワー", "answer": false },
+      {
+        "value": "コンプリート・ジョイ・オブ・ホームブルーイング",
+        "answer": true
+      },
+      {
+        "value": "ファースト・ステップ・トウ・ビア・クリエイター",
+        "answer": false
+      },
+      { "value": "プリュー・ユア・オウン", "answer": false }
+    ],
+    "explanation": "TODO"
+  },
+  {
+    "id": 108,
+    "level": 3,
+    "question": "キリンホールディングスによる「2022年国別ビール消費量」の調査結果において20年連続で1位の国を、次の選択肢より選んでください。",
+    "choices": [
+      { "value": "アメリカ", "answer": false },
+      { "value": "ブラジル", "answer": false },
+      { "value": "中国", "answer": true },
+      { "value": "ドイツ", "answer": false }
+    ],
+    "explanation": "TODO"
   }
 ]

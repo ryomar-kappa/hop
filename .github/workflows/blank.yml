@@ -41,6 +41,7 @@ jobs:
         run: |
           cd ios
           xcodebuild -exportArchive -archivePath Runner.xcarchive -exportOptionsPlist ExportOptions.plist -exportPath ./ -allowProvisioningUpdates -authenticationKeyPath `pwd`/private_keys/AuthKey_${{ secrets.APPLE_API_ISSUE_ID }}.p8 -authenticationKeyID ${{ secrets.APPLE_API_KEY_ID }} -authenticationKeyIssuerID ${{ secrets.APPLE_API_ISSUE_ID }}
+          find ./ -name "*.ipa" -print
 
       - name: Upload to App Store Connect
         run: |

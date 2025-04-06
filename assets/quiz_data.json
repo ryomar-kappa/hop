@@ -2,6 +2,7 @@
   {
     "id": 1,
     "level": 3,
+    "category": 1,
     "question": "お酒の製造方法による分類で、ビールはどれに該当するか。\n次の選択肢より選んでください。",
     "choices": [
       { "value": "醸造酒", "answer": true },
